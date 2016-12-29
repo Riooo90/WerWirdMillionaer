@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "Main.h"
 
-int a = 30, b = 30;
+int a = 50, b = 50;
 
 void main()
 {
@@ -11,7 +11,6 @@ void main()
 	groesse(a, b);
 	formen("s");
 	zeichneFortschrittsanzeige(0);
-	getchar();
-	zeichneFortschrittsanzeige(3);
+	einlogButton();
 	getchar();
 }

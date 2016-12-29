@@ -37,3 +37,5 @@ void zeichen(int i, char c);
 void zeichen2(int i, int j, char c);
 void statusText(char * s);
 char *abfragen();
+
+void einlogButton();
