@@ -2,6 +2,8 @@
 
 #include "stdafx.h"
 
+//Test
+
 	/*grundlegende Variablen für Layout definieren: */
 int startShowGeldliste = 55;
 int aktiveStufe = 0;
