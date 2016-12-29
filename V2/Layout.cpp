@@ -1,4 +1,4 @@
-/*grundlegende Variablen für Layout definieren: */
+/*grundlegende Variablen für Layout definieren:  */
 #include "stdafx.h"
 int startShowGeldliste = 55;
 int aktiveStufe = 0;
