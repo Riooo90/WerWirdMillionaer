@@ -3,6 +3,7 @@
 #include "stdafx.h"
 
 //Test
+//Hallo Reni
 
 	/*grundlegende Variablen für Layout definieren: */
 int startShowGeldliste = 55;
