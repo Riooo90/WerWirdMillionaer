@@ -12,6 +12,8 @@ void senkrechtFarbe(int s, int z, int n, int f);
 void senkrechtForm(int s, int z, int n, char* f);
 void senkrechtBeides(int s, int z, int n, int farbe, char* form);
 
+void zeichneFortschrittsanzeige(int aktiveStufe);
+
 //vorhandene:
 void groesse(int x, int y);
 void hintergrund(int i, int f);

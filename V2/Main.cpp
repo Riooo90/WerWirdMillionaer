@@ -1,11 +1,9 @@
 // V2.cpp : Defines the entry point for the console application.
 
 #include "stdafx.h"
-#include "Layout.cpp"
-//Test
-//Hallo Reni
+#include "Main.h"
 
-	
+int a = 30, b = 30;
 
 void main()
 {
