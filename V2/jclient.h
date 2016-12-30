@@ -39,3 +39,5 @@ void statusText(char * s);
 char *abfragen();
 
 void einlogButton();
+void frageHintergrund();
+void antwortenHintergrund();
