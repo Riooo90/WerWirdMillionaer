@@ -4,6 +4,8 @@ int sendMessage(char *sendbuf);
 int sendMessageI2(int, int);
 char *getAnswer(void);
 
+
+
 //Eigene:
 void waagrechtFarbe(int s, int z, int n, int f);
 void waagrechtForm(int s, int z, int n, char* f);
@@ -12,9 +14,18 @@ void senkrechtFarbe(int s, int z, int n, int f);
 void senkrechtForm(int s, int z, int n, char* f);
 void senkrechtBeides(int s, int z, int n, int farbe, char* form);
 
+//WWM-Funktionen:
 void zeichneFortschrittsanzeige(int aktiveStufe);
+void einlogButton();
+void frageHintergrund();
+void antwortenHintergrundA(int farbe);
+void antwortenHintergrundB(int farbe);
+void antwortenHintergrundC(int farbe);
+void antwortenHintergrundD(int farbe);
 
-//vorhandene:
+
+
+//grundlegende BOS-Funktionen
 void groesse(int x, int y);
 void hintergrund(int i, int f);
 void hintergrund2(int i, int j, int f);
@@ -37,7 +48,3 @@ void zeichen(int i, char c);
 void zeichen2(int i, int j, char c);
 void statusText(char * s);
 char *abfragen();
-
-void einlogButton();
-void frageHintergrund();
-void antwortenHintergrund();

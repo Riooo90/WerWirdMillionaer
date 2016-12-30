@@ -6,7 +6,6 @@
 //Spielfeld Groesse
 int a = 50, b = 50;
 
-
 void main()
 {
 	loeschen();
@@ -14,7 +13,10 @@ void main()
 	formen("s");
 	zeichneFortschrittsanzeige(0);
 	frageHintergrund();
-	antwortenHintergrund();
+	antwortenHintergrundA(123456);
+	antwortenHintergrundB(555555);
+	antwortenHintergrundC(555555);
+	antwortenHintergrundD(555555);
 	einlogButton();
 	getchar();
 }
