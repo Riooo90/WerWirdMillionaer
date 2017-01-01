@@ -38,6 +38,7 @@ void zeichneJokerbereich() {
 
 //Einlog Button
 void zeichneEinlogButton() {
+
 	for (i = 67; i < 74; i++) {
 		farbe(i, BLUE);
 		//text(i; 'Einloggen');
@@ -95,6 +96,7 @@ void frageHintergrund() {
 	waagrechtFarbe(5, 43, 31, BLUE);
 	waagrechtFarbe(5, 42, 31, BLUE);
 	waagrechtFarbe(5, 41, 31, BLUE);
+	//zeichneRechteck(5, 41, 31, 8, 888888, "s");
 }
 
 

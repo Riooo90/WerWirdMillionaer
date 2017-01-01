@@ -21,9 +21,6 @@ void main()
 	groesse(a, b);
 	formen("s");
 	//zeichneRechteck(5, 5, 10, 5, 123456, "s");
-	getchar();
-	getchar();
-
 	zeichneFortschrittsanzeige(0);
 	frageHintergrund();
 	antwortenHintergrundA(123456);
