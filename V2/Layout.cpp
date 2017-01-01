@@ -1,13 +1,12 @@
-
-/*grundlegende Variablen für Layout definieren:  */
 #include "stdafx.h"
+/*grundlegende Variablen für Layout definieren:  */
 int startShowGeldliste = 95;
 int i;
 char* GeldStufen[15] = { "50 EURO", "100 EURO", "200 EURO", "300 EURO", "500 EURO", "1000 EURO", "2000 EURO", "4000 EURO", "8000 EURO", "16000 EURO", "32000 EURO", "64000 EURO", "125000 EURO", "500000 EURO", "1 MILLION" };
-
 int aktiveStufe = 0;
+int joker5050 = 1, jokerTel = 1, jokerPublikum = 1;//Verfügbarkeit der Joker: 1=vorhanden, 0 = benutzt
 
-//Geldliste zeichnen:
+//Fortschrittsanzeige:
 void zeichneFortschrittsanzeige(int aktiveStufe) {
 	for (int i = 0; i < 15; i++) {
 		text(startShowGeldliste + i * 2 * 50, GeldStufen[i]);
@@ -16,12 +15,29 @@ void zeichneFortschrittsanzeige(int aktiveStufe) {
 			farbe(startShowGeldliste + 1 + i * 2 * 50, GREEN);
 			farbe(startShowGeldliste + i * 2 * 50, GREEN);
 		}
-	}	senkrechtBeides(90, 0, 30, BLUE, "s");
+	}	senkrechtBeides(90, -1, 50, BLUE, "s");
+}
+
+//Joker-Bereich:
+void zeichneJokerbereich() {
+	form(1893, "c");
+	form(1993, "c");
+	form(2093, "c");
+	farbe(1893, BLUE);
+	farbe(1993, BLUE);
+	farbe(2093, BLUE);
+	hintergrund(1893, SILVER);
+	hintergrund(1993, SILVER);
+	hintergrund(2093, SILVER);
+	text(1896, "50:50-Joker");
+	text(1996, "Telefon-Joker");
+	text(2096, "Publikums-Joker");
+
+	waagrechtBeides(91, 33, 9, BLUE, "s");
 }
 
 //Einlog Button
-
-void einlogButton() {
+void zeichneEinlogButton() {
 	for (i = 67; i < 74; i++) {
 		farbe(i, BLUE);
 		//text(i; 'Einloggen');
@@ -62,7 +78,6 @@ void einlogButton() {
 }
 
 /*Fragen Zeile*/
-
 void frageHintergrund() {
 	waagrechtFarbe(5, 48, 31, BLUE);
 	waagrechtFarbe(5, 47, 31, BLUE);
@@ -135,4 +150,15 @@ void antwortenHintergrundD(int farbe) {
 	hintergrund(1086, SILVER);
 	waagrechtFarbe(22, 20, 14, farbe);
 	waagrechtFarbe(22, 19, 14, farbe);
+}
+
+//Joker-Funktionen
+void nutzeJoker5050() {
+
+}
+void nutzeJokerTelefon() {
+
+}
+void nutzeJokerPublikum() {
+
 }

@@ -1,7 +1,6 @@
 // V2.cpp : Defines the entry point for the console application.
 
 #include "stdafx.h"
-#include "Main.h"
 
 //Spielfeld Groesse
 int a = 50, b = 50;
@@ -18,5 +17,6 @@ void main()
 	antwortenHintergrundC(555555);
 	antwortenHintergrundD(555555);
 	einlogButton();
+	zeichneJokerbereich();
 	getchar();
 }

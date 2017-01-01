@@ -22,7 +22,7 @@ void antwortenHintergrundA(int farbe);
 void antwortenHintergrundB(int farbe);
 void antwortenHintergrundC(int farbe);
 void antwortenHintergrundD(int farbe);
-
+void zeichneJokerbereich();
 
 
 //grundlegende BOS-Funktionen
