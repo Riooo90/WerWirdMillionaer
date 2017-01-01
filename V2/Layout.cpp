@@ -11,9 +11,9 @@ void zeichneFortschrittsanzeige(int aktiveStufe) {
 	for (int i = 0; i < 15; i++) {
 		text(startShowGeldliste + i * 2 * 50, GeldStufen[i]);
 		if (i == aktiveStufe) {
-			farbe(startShowGeldliste - 1 + i * 2 * 50, GREEN);
-			farbe(startShowGeldliste + 1 + i * 2 * 50, GREEN);
-			farbe(startShowGeldliste + i * 2 * 50, GREEN);
+			farbe(startShowGeldliste - 1 + i * 2 * 50, LIGHTYELLOW);
+			farbe(startShowGeldliste + 1 + i * 2 * 50, LIGHTYELLOW);
+			farbe(startShowGeldliste + i * 2 * 50, LIGHTYELLOW);
 		}
 	}	senkrechtBeides(90, -1, 50, BLUE, "s");
 }

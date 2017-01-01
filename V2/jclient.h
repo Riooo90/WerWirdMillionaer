@@ -16,7 +16,7 @@ void senkrechtBeides(int s, int z, int n, int farbe, char* form);
 
 //WWM-Funktionen:
 void zeichneFortschrittsanzeige(int aktiveStufe);
-void einlogButton();
+void zeichneEinlogButton();
 void frageHintergrund();
 void antwortenHintergrundA(int farbe);
 void antwortenHintergrundB(int farbe);
