@@ -14,6 +14,8 @@ void senkrechtFarbe(int s, int z, int n, int f);
 void senkrechtForm(int s, int z, int n, char* f);
 void senkrechtBeides(int s, int z, int n, int farbe, char* form);
 
+void zeichneRechteck(int s, int z, int breite, int hoehe, int farbe, char* form);
+
 //WWM-Funktionen:
 void zeichneFortschrittsanzeige(int aktiveStufe);
 void zeichneEinlogButton();
