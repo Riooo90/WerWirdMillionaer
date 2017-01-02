@@ -14,12 +14,34 @@ void deleteAll() {
 	sprintf_s(befehl, 100, "clearAllText \n");
 	sendMessage(befehl);
 }
+static int feld, ix, iy;
+/**
+ermittelt die Positon des geklickten Feldes und setzt in die globalen Variablen ix und iy die Positionen des aktuellen Feldes
+**/
+void bekommeKlickPosition() {
+	for (;;) {
+		char *a = abfragen();
+		if (strlen(a) > 0) {
+			printf("Nachricht: %s\n", a);
+			if (a[0] == '#') {
+				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
+				//printf_s("# %i %i", ix, iy);
+			}
+		}
+		else {
+			Sleep(100);
+		}
+	}
+}
 
 void main()
 {
+	int position;
 	deleteAll();
 	groesse(a, b);
 	formen("s");
+	//bekommeKlickPosition();
+	//printf_s("# %i %i %i", feld, ix, iy);
 	//zeichneRechteck(5, 5, 10, 5, 123456, "s");
 	zeichneFortschrittsanzeige(0);
 	frageHintergrund();
