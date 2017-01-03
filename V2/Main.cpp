@@ -6,6 +6,11 @@
 int a = 50, b = 50;
 static int feld, ix, iy;
 
+//globale Variable für die Fragen zum auslesen
+static char frage;
+
+int aktiveStufe = 0;
+
 void loescheAlles() {
 	loeschen();
 	// jetzt Schriftgroesse veraendern, gilt dann fuer alle neue Texte
@@ -41,9 +46,11 @@ void main()
 	loescheAlles();
 	groesse(a, b);
 	formen("s");
-	bekommeKlickPosition();
+	/*bekommeKlickPosition();
 	printf_s("# %i %i %i", feld, ix, iy);
-	zeichneRechteck(5, 5, 10, 5, 123456, "s");
+	zeichneRechteck(5, 5, 10, 5, 123456, "s");*/
+
+	//Zeichne das Spielfeld
 	zeichneFortschrittsanzeige(0);
 	frageHintergrund();
 	antwortenHintergrundA(123456);
@@ -52,5 +59,31 @@ void main()
 	antwortenHintergrundD(555555);
 	zeichneEinlogButton();
 	zeichneJokerbereich();
+	frageEinlesen(aktiveStufe);
+
+	//Zustand 0 ist der Startzustand
+	int zustand = 0;
+
+	for (;;) {
+		char *a = abfragen();
+		if (strlen(a) > 0) {
+			printf("Nachricht: %s\n", a);
+			if (a[0] == '#') {
+				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
+				//printf_s("# %i %i", ix, iy);
+				switch (zustand) {
+				case 0:
+					break;
+				case 1:
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				}
+			}
+		}
+		else { Sleep(100); }
+	}
 	getchar();
 }

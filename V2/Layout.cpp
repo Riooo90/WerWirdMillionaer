@@ -3,7 +3,6 @@
 int startShowGeldliste = 95;
 int i;
 char* GeldStufen[15] = { "50 EURO", "100 EURO", "200 EURO", "300 EURO", "500 EURO", "1000 EURO", "2000 EURO", "4000 EURO", "8000 EURO", "16000 EURO", "32000 EURO", "64000 EURO", "125000 EURO", "500000 EURO", "1 MILLION" };
-int aktiveStufe = 0;
 int joker5050 = 1, jokerTel = 1, jokerPublikum = 1;//Verfügbarkeit der Joker: 1=vorhanden, 0 = benutzt
 
 //Fortschrittsanzeige:
