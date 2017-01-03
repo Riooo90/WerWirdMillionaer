@@ -72,8 +72,7 @@ void main()
 					frageEinlesen(aktiveStufe);
 					antwortenEinlesen(aktiveStufe);
 					if (richtig(ix, iy, aktiveStufe) == 1) {
-						aktiveStufe += 1;
-						zustand = 0;
+												zustand = 0;
 					}
 					else if(richtig(ix, iy, aktiveStufe) == 0) {
 						zustand = 1;

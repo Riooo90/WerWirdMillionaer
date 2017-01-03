@@ -40,7 +40,6 @@ void zeichneWeiterButton() {
 
 	for (i = 67; i < 74; i++) {
 		farbe(i, BLUE);
-		//text(i; 'Nachste Frage');
 	}
 	for (i = 117; i < 124; i++) {
 		farbe(i, BLUE);
