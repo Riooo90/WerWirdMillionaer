@@ -4,6 +4,7 @@
 
 //Spielfeld Groesse
 int a = 50, b = 50;
+static int feld, ix, iy;
 
 void deleteAll() {
 	loeschen();
@@ -14,7 +15,7 @@ void deleteAll() {
 	sprintf_s(befehl, 100, "clearAllText \n");
 	sendMessage(befehl);
 }
-static int feld, ix, iy;
+
 /**
 ermittelt die Positon des geklickten Feldes und setzt in die globalen Variablen ix und iy die Positionen des aktuellen Feldes
 **/
