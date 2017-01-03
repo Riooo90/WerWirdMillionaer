@@ -50,5 +50,8 @@
     <ClCompile Include="Layout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Fragen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

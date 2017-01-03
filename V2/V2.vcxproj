@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Fragen.cpp" />
     <ClCompile Include="funktionen.cpp" />
     <ClCompile Include="funktionenEigen.cpp" />
     <ClCompile Include="Layout.cpp" />
