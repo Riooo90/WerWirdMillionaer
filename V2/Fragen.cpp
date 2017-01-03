@@ -23,7 +23,7 @@ char *fragen[] = { "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, d
 "Welchen Eintrag findet man im Urduden von 1880 nicht?" };
 
 //Schrittweite 4
-char *antworten[]= { "...einen draufmachen", "...die Nacht durchzechen", "...die Sau rauslassen", "...auf die Kacke hauen",
+char *antworten[] = { "...einen draufmachen", "...die Nacht durchzechen", "...die Sau rauslassen", "...auf die Kacke hauen",
 "stolze Summe", "selbstbewusste Differenz", "arroganter Quotient", "hochmuetiges Produkt",
 "...hinguckends", "...anschauends", "zusehends","glotzends",
 "Seilsendungen", "Leitungskanaele","Kabelprogramme", "Drahtshows",
@@ -48,69 +48,61 @@ void frageEinlesen(int aktiveStufe) {
 void antwortenEinlesen(int aktiveStufe) {
 	//damit wir alle vier Antworten auslesen koennen
 		//zeichne die antwort Buttons mit der passenden antwort
-		antwort = antworten[(aktiveStufe * 4)];
-		antwortenHintergrundA(BLUE, antwort);
+	antwort = antworten[(aktiveStufe * 4)];
+	antwortenHintergrundA(BLUE, antwort);
 
-		antwort = antworten[(aktiveStufe * 4) + 1];
-		antwortenHintergrundB(BLUE, antwort);
+	antwort = antworten[(aktiveStufe * 4) + 1];
+	antwortenHintergrundB(BLUE, antwort);
 
-		antwort = antworten[(aktiveStufe * 4) + 2];
-		antwortenHintergrundC(BLUE, antwort);
+	antwort = antworten[(aktiveStufe * 4) + 2];
+	antwortenHintergrundC(BLUE, antwort);
 
-		antwort = antworten[(aktiveStufe * 4) + 3];
-		antwortenHintergrundD(BLUE, antwort);
+	antwort = antworten[(aktiveStufe * 4) + 3];
+	antwortenHintergrundD(BLUE, antwort);
 }
 //Vergleicht die Texte aus den KLicks, an der Stelle Stufe, ix und iy kommen vom KLick, aktive Stufe übergeben, da abhängig davon, nicht in der fkt als for drin!
 int richtig(int ix, int iy, int aktiveStufe) {
-		/*	a = 4, 33
-		b = 36, 33
-		c = 4, 22
-		d = 36, 22 
-		es gehört immer ein zweier Paar zusammen*/
-		int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 36, 33, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
+	/*	a = 4, 33
+	b = 36, 33
+	c = 4, 22
+	d = 36, 22
+	es gehört immer ein zweier Paar zusammen*/
+	int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 36, 33, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
 
-		if (ix == loesung[aktiveStufe] && iy == loesung[aktiveStufe + 1]) {
-			if (ix == 4 && iy == 33) {
-				antwortenHintergrundA(GREEN, antwort);
-				zeichneWeiterButton();
-				return 1;
-			}
-			if (ix == 36 && iy == 33) {
-				antwortenHintergrundB(GREEN, antwort);
-				zeichneWeiterButton();
-				return 1;
-			}
-			if (ix == 4 && iy == 22) {
-				antwortenHintergrundC(GREEN, antwort);
-				zeichneWeiterButton();
-				return 1;
-			}
-			if (ix == 36, iy == 22){
-				antwortenHintergrundD(GREEN, antwort);
-				zeichneWeiterButton();
-				return 1;
-			}
+	if (ix == loesung[aktiveStufe] && iy == loesung[aktiveStufe + 1]) {
+		if (ix == 4 && iy == 33) {
+			antwortenHintergrundA(GREEN, antwort);
+			return 1;
+		}
+		if (ix == 36 && iy == 33) {
+			antwortenHintergrundB(GREEN, antwort);
+			return 1;
+		}
+		if (ix == 4 && iy == 22) {
+			antwortenHintergrundC(GREEN, antwort);
+			return 1;
+		}
+		if (ix == 36, iy == 22) {
+			antwortenHintergrundD(GREEN, antwort);
+			return 1;
 		}
 		else {
 			if (ix == 4 && iy == 33) {
 				antwortenHintergrundA(RED, antwort);
-				zeichneNeustartButton();
 				return 0;
 			}
 			if (ix == 36 && iy == 33) {
 				antwortenHintergrundB(RED, antwort);
-				zeichneNeustartButton();
 				return 0;
 			}
 			if (ix == 4 && iy == 22) {
 				antwortenHintergrundC(RED, antwort);
-				zeichneNeustartButton();
 				return 0;
 			}
-			if (ix == 36 && iy == 22){
+			if (ix == 36 && iy == 22) {
 				antwortenHintergrundD(RED, antwort);
-				zeichneNeustartButton();
 				return 0;
 			}
 		}
+	}
 }

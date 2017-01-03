@@ -67,23 +67,13 @@ void main()
 			if (a[0] == '#') {
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
 				//printf_s("# %i %i", ix, iy);
-				switch (zustand) {
-				case 0:
-					frageEinlesen(aktiveStufe);
-					antwortenEinlesen(aktiveStufe);
-					if (richtig(ix, iy, aktiveStufe) == 1) {
-												zustand = 0;
-					}
-					else if(richtig(ix, iy, aktiveStufe) == 0) {
-						zustand = 1;
-					}
-					break;
-				case 1:
-					break;
-				case 2:
-					break;
-				case 3:
-					break;
+				if (richtig(ix, iy, aktiveStufe) == 1) {
+					zeichneWeiterButton();
+					//frageEinlesen(aktiveStufe);
+					//antwortenEinlesen(aktiveStufe);
+				}
+				else if (richtig(ix, iy, aktiveStufe) == 0) {
+					zeichneNeustartButton();
 				}
 			}
 		}
