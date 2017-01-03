@@ -18,7 +18,8 @@ void zeichneRechteck(int s, int z, int breite, int hoehe, int farbe, char* form)
 
 //WWM-Funktionen:
 void zeichneFortschrittsanzeige(int aktiveStufe);
-void zeichneEinlogButton();
+void zeichneWeiterButton();
+void zeichneNeustartButton();
 void frageHintergrund(char* frage);
 void antwortenHintergrundA(int farbe, char* antwort);
 void antwortenHintergrundB(int farbe, char* antwort);
@@ -27,7 +28,7 @@ void antwortenHintergrundD(int farbe, char* antwort);
 void zeichneJokerbereich();
 void frageEinlesen(int aktiveStufe);
 void antwortenEinlesen(int aktiveStufe);
-void richtig(int ix, int iy, int aktiveStufe);
+int richtig(int ix, int iy, int aktiveStufe);
 
 //grundlegende BOS-Funktionen
 void groesse(int x, int y);

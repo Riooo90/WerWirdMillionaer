@@ -51,14 +51,15 @@ void main()
 
 	//Zeichne das Spielfeld
 	zeichneFortschrittsanzeige(0);
-	zeichneEinlogButton();
 	zeichneJokerbereich();
-	frageEinlesen(aktiveStufe);
-	antwortenEinlesen(aktiveStufe);
+
 	//Zustand 0 ist der Startzustand
 	int zustand = 0;
 
 	//hier bekommen wir unseren KLick, bis abfrage > 0, also etwas geklickt wurde
+
+	frageEinlesen(aktiveStufe);
+	antwortenEinlesen(aktiveStufe);
 	for (;;) {
 		char *a = abfragen();
 		if (strlen(a) > 0) {
@@ -66,9 +67,17 @@ void main()
 			if (a[0] == '#') {
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
 				//printf_s("# %i %i", ix, iy);
-				richtig(ix, iy, aktiveStufe);
 				switch (zustand) {
 				case 0:
+					frageEinlesen(aktiveStufe);
+					antwortenEinlesen(aktiveStufe);
+					if (richtig(ix, iy, aktiveStufe) == 1) {
+						aktiveStufe += 1;
+						zustand = 0;
+					}
+					else if(richtig(ix, iy, aktiveStufe) == 0) {
+						zustand = 1;
+					}
 					break;
 				case 1:
 					break;

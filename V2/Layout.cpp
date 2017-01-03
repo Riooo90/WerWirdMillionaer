@@ -35,12 +35,12 @@ void zeichneJokerbereich() {
 	waagrechtBeides(91, 33, 9, BLUE, "s");
 }
 
-//Einlog Button
-void zeichneEinlogButton() {
+//Weiter Button
+void zeichneWeiterButton() {
 
 	for (i = 67; i < 74; i++) {
 		farbe(i, BLUE);
-		//text(i; 'Einloggen');
+		//text(i; 'Nachste Frage');
 	}
 	for (i = 117; i < 124; i++) {
 		farbe(i, BLUE);
@@ -52,7 +52,7 @@ void zeichneEinlogButton() {
 		farbe(i, BLUE);
 	}
 
-	text(170, "Einloggen");
+	text(170, "Naechste Frage");
 
 	//Spitzen links und rechts
 	for (i = 116; i < 117; i++) {
@@ -76,6 +76,48 @@ void zeichneEinlogButton() {
 		hintergrund(i, SILVER);
 	}
 }
+/*Neustart Button*/
+//Weiter Button
+void zeichneNeustartButton() {
+
+	for (i = 67; i < 74; i++) {
+		farbe(i, BLUE);
+	}
+	for (i = 117; i < 124; i++) {
+		farbe(i, BLUE);
+	}
+	for (i = 167; i < 174; i++) {
+		farbe(i, BLUE);
+	}
+	for (i = 217; i < 224; i++) {
+		farbe(i, BLUE);
+	}
+
+	text(170, "Neustart");
+
+	//Spitzen links und rechts
+	for (i = 116; i < 117; i++) {
+		farbe(i, BLUE);
+		form(i, "tru");
+		hintergrund(i, SILVER);
+	}
+	for (i = 166; i < 167; i++) {
+		farbe(i, BLUE);
+		form(i, "trd");
+		hintergrund(i, SILVER);
+	}
+	for (i = 124; i < 125; i++) {
+		farbe(i, BLUE);
+		form(i, "tlu");
+		hintergrund(i, SILVER);
+	}
+	for (i = 174; i < 175; i++) {
+		farbe(i, BLUE);
+		form(i, "tld");
+		hintergrund(i, SILVER);
+	}
+}
+
 
 /*Fragen Zeile*/
 void frageHintergrund(char* frage) {

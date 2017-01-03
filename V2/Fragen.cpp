@@ -3,6 +3,8 @@
 static char* frage;
 static char* antwort;
 
+//Loesung 0 = falsch, 1 = richtig, in der main wird ausgelesen was FKR zurück gibt
+
 //Schrittweite 1
 char *fragen[] = { "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, das Ferkel und...?",
 "Was ist meist ziemlich viel?",
@@ -59,7 +61,7 @@ void antwortenEinlesen(int aktiveStufe) {
 		antwortenHintergrundD(BLUE, antwort);
 }
 //Vergleicht die Texte aus den KLicks, an der Stelle Stufe, ix und iy kommen vom KLick, aktive Stufe übergeben, da abhängig davon, nicht in der fkt als for drin!
-void richtig(int ix, int iy, int aktiveStufe) {
+int richtig(int ix, int iy, int aktiveStufe) {
 		/*	a = 4, 33
 		b = 36, 33
 		c = 4, 22
@@ -70,45 +72,45 @@ void richtig(int ix, int iy, int aktiveStufe) {
 		if (ix == loesung[aktiveStufe] && iy == loesung[aktiveStufe + 1]) {
 			if (ix == 4 && iy == 33) {
 				antwortenHintergrundA(GREEN, antwort);
-				Sleep(50000);
-				aktiveStufe += 1;
+				zeichneWeiterButton();
+				return 1;
 			}
 			if (ix == 36 && iy == 33) {
 				antwortenHintergrundB(GREEN, antwort);
-				Sleep(50000);
-				aktiveStufe += 1;
+				zeichneWeiterButton();
+				return 1;
 			}
 			if (ix == 4 && iy == 22) {
 				antwortenHintergrundC(GREEN, antwort);
-				Sleep(50000);
-				aktiveStufe += 1;
+				zeichneWeiterButton();
+				return 1;
 			}
-			else {
+			if (ix == 36, iy == 22){
 				antwortenHintergrundD(GREEN, antwort);
-				Sleep(50000);
-				aktiveStufe += 1;
+				zeichneWeiterButton();
+				return 1;
 			}
 		}
 		else {
 			if (ix == 4 && iy == 33) {
 				antwortenHintergrundA(RED, antwort);
-				Sleep(50000);
-				aktiveStufe += 1;
+				zeichneNeustartButton();
+				return 0;
 			}
 			if (ix == 36 && iy == 33) {
 				antwortenHintergrundB(RED, antwort);
-				Sleep(50000);
-				aktiveStufe += 1;
+				zeichneNeustartButton();
+				return 0;
 			}
 			if (ix == 4 && iy == 22) {
 				antwortenHintergrundC(RED, antwort);
-				Sleep(50000);
-				aktiveStufe += 1;
+				zeichneNeustartButton();
+				return 0;
 			}
-			else {
+			if (ix == 36 && iy == 22){
 				antwortenHintergrundD(RED, antwort);
-				Sleep(50000);
-				aktiveStufe += 1;
+				zeichneNeustartButton();
+				return 0;
 			}
 		}
 }
