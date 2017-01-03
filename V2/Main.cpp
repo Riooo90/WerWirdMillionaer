@@ -6,7 +6,7 @@
 int a = 50, b = 50;
 static int feld, ix, iy;
 
-void deleteAll() {
+void loescheAlles() {
 	loeschen();
 	// jetzt Schriftgroesse veraendern, gilt dann fuer alle neue Texte
 	char befehl[100];
@@ -38,12 +38,12 @@ void bekommeKlickPosition() {
 void main()
 {
 	int position;
-	deleteAll();
+	loescheAlles();
 	groesse(a, b);
 	formen("s");
-	//bekommeKlickPosition();
-	//printf_s("# %i %i %i", feld, ix, iy);
-	//zeichneRechteck(5, 5, 10, 5, 123456, "s");
+	bekommeKlickPosition();
+	printf_s("# %i %i %i", feld, ix, iy);
+	zeichneRechteck(5, 5, 10, 5, 123456, "s");
 	zeichneFortschrittsanzeige(0);
 	frageHintergrund();
 	antwortenHintergrundA(123456);
