@@ -68,6 +68,3 @@ void antwortenEinlesen(int aktiveStufe) {
 		antwortenHintergrundD(BLUE, antwort);
 }
 
-void richtig() {
-	if( == 1)
-}
