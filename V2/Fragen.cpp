@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 //Schrittweite 1
 char fragen{ 'Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, das Ferkel und...?',
 'Was ist meist ziemlich viel?',
