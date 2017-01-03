@@ -55,10 +55,10 @@ void main()
 	zeichneJokerbereich();
 	frageEinlesen(aktiveStufe);
 	antwortenEinlesen(aktiveStufe);
-
 	//Zustand 0 ist der Startzustand
 	int zustand = 0;
 
+	//hier bekommen wir unseren KLick, bis abfrage > 0, also etwas geklickt wurde
 	for (;;) {
 		char *a = abfragen();
 		if (strlen(a) > 0) {
@@ -66,6 +66,7 @@ void main()
 			if (a[0] == '#') {
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
 				//printf_s("# %i %i", ix, iy);
+				richtig(ix, iy, aktiveStufe);
 				switch (zustand) {
 				case 0:
 					break;

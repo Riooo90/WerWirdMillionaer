@@ -37,15 +37,6 @@ char *antworten[]= { "...einen draufmachen", "...die Nacht durchzechen", "...die
 "Nichtschwimmer", "Hundebesitzer", "Mountainbiker", "Wohnmobilfahrer",
 "Dynamit", "Gluehlampe", "Batterie", "Mikrophon" };
 
-/*
-a = 4, 33
-b = 36, 33
-c = 4, 22
-d = 36, 22
-*/
-char* loesung[] = { "4, 22", "4, 33", "4, 22", "4, 22", "36, 33", "4, 22", "36, 33", "4, 22", "4, 33", "36, 33", "4, 33", "4, 33", "36, 22", "4, 22", "36, 33" };
-
-
 //lesen Fragen ein und schreiben Sie in eine globale Var
 void frageEinlesen(int aktiveStufe) {
 	frage = fragen[aktiveStufe];
@@ -67,4 +58,57 @@ void antwortenEinlesen(int aktiveStufe) {
 		antwort = antworten[(aktiveStufe * 4) + 3];
 		antwortenHintergrundD(BLUE, antwort);
 }
+//Vergleicht die Texte aus den KLicks, an der Stelle Stufe, ix und iy kommen vom KLick, aktive Stufe übergeben, da abhängig davon, nicht in der fkt als for drin!
+void richtig(int ix, int iy, int aktiveStufe) {
+		/*	a = 4, 33
+		b = 36, 33
+		c = 4, 22
+		d = 36, 22 
+		es gehört immer ein zweier Paar zusammen*/
+		int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 36, 33, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
 
+		if (ix == loesung[aktiveStufe] && iy == loesung[aktiveStufe + 1]) {
+			if (ix == 4 && iy == 33) {
+				antwortenHintergrundA(GREEN, antwort);
+				Sleep(50000);
+				aktiveStufe += 1;
+			}
+			if (ix == 36 && iy == 33) {
+				antwortenHintergrundB(GREEN, antwort);
+				Sleep(50000);
+				aktiveStufe += 1;
+			}
+			if (ix == 4 && iy == 22) {
+				antwortenHintergrundC(GREEN, antwort);
+				Sleep(50000);
+				aktiveStufe += 1;
+			}
+			else {
+				antwortenHintergrundD(GREEN, antwort);
+				Sleep(50000);
+				aktiveStufe += 1;
+			}
+		}
+		else {
+			if (ix == 4 && iy == 33) {
+				antwortenHintergrundA(RED, antwort);
+				Sleep(50000);
+				aktiveStufe += 1;
+			}
+			if (ix == 36 && iy == 33) {
+				antwortenHintergrundB(RED, antwort);
+				Sleep(50000);
+				aktiveStufe += 1;
+			}
+			if (ix == 4 && iy == 22) {
+				antwortenHintergrundC(RED, antwort);
+				Sleep(50000);
+				aktiveStufe += 1;
+			}
+			else {
+				antwortenHintergrundD(RED, antwort);
+				Sleep(50000);
+				aktiveStufe += 1;
+			}
+		}
+}

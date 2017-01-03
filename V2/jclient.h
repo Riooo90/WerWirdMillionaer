@@ -27,6 +27,7 @@ void antwortenHintergrundD(int farbe, char* antwort);
 void zeichneJokerbereich();
 void frageEinlesen(int aktiveStufe);
 void antwortenEinlesen(int aktiveStufe);
+void richtig(int ix, int iy, int aktiveStufe);
 
 //grundlegende BOS-Funktionen
 void groesse(int x, int y);
