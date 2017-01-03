@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 static char* frage;
+static char* antwort;
 
 //Schrittweite 1
 char *fragen[] = { "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, das Ferkel und...?",
@@ -23,7 +24,7 @@ char *fragen[] = { "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, d
 char *antworten[]= { "...einen draufmachen", "...die Nacht durchzechen", "...die Sau rauslassen", "...auf die Kacke hauen",
 "stolze Summe", "selbstbewusste Differenz", "arroganter Quotient", "hochmuetiges Produkt",
 "...hinguckends", "...anschauends", "zusehends","glotzends",
-"Seilsendungen", "Leitungskanaele","Labelprogramme", "Drahtshows",
+"Seilsendungen", "Leitungskanaele","Kabelprogramme", "Drahtshows",
 "sussex Sussex.", "kennt Kent.","yorkshire Yorkshire.", "cornwall Cornwall.",
 "Ablfuss und Tatsache", "Stoepsel und Wirklichkeit","Dichtung und Wahrheit", "Ventil und Realitaet" ,
 "Rueckbank", "Tank","Scheibenwischer", "Schneeketten",
@@ -36,9 +37,37 @@ char *antworten[]= { "...einen draufmachen", "...die Nacht durchzechen", "...die
 "Nichtschwimmer", "Hundebesitzer", "Mountainbiker", "Wohnmobilfahrer",
 "Dynamit", "Gluehlampe", "Batterie", "Mikrophon" };
 
+/*
+a = 4, 33
+b = 36, 33
+c = 4, 22
+d = 36, 22
+*/
+char* loesung[] = { "4, 22", "4, 33", "4, 22", "4, 22", "36, 33", "4, 22", "36, 33", "4, 22", "4, 33", "36, 33", "4, 33", "4, 33", "36, 22", "4, 22", "36, 33" };
+
 
 //lesen Fragen ein und schreiben Sie in eine globale Var
 void frageEinlesen(int aktiveStufe) {
 	frage = fragen[aktiveStufe];
-	printf("%s", frage);
+	frageHintergrund(frage);
+}
+
+void antwortenEinlesen(int aktiveStufe) {
+	//damit wir alle vier Antworten auslesen koennen
+		//zeichne die antwort Buttons mit der passenden antwort
+		antwort = antworten[(aktiveStufe * 4)];
+		antwortenHintergrundA(BLUE, antwort);
+
+		antwort = antworten[(aktiveStufe * 4) + 1];
+		antwortenHintergrundB(BLUE, antwort);
+
+		antwort = antworten[(aktiveStufe * 4) + 2];
+		antwortenHintergrundC(BLUE, antwort);
+
+		antwort = antworten[(aktiveStufe * 4) + 3];
+		antwortenHintergrundD(BLUE, antwort);
+}
+
+void richtig() {
+	if( == 1)
 }

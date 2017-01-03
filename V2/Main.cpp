@@ -7,7 +7,6 @@ int a = 50, b = 50;
 static int feld, ix, iy;
 
 //globale Variable für die Fragen zum auslesen
-static char frage;
 
 int aktiveStufe = 0;
 
@@ -52,14 +51,10 @@ void main()
 
 	//Zeichne das Spielfeld
 	zeichneFortschrittsanzeige(0);
-	frageHintergrund();
-	antwortenHintergrundA(123456);
-	antwortenHintergrundB(555555);
-	antwortenHintergrundC(555555);
-	antwortenHintergrundD(555555);
 	zeichneEinlogButton();
 	zeichneJokerbereich();
 	frageEinlesen(aktiveStufe);
+	antwortenEinlesen(aktiveStufe);
 
 	//Zustand 0 ist der Startzustand
 	int zustand = 0;

@@ -78,7 +78,7 @@ void zeichneEinlogButton() {
 }
 
 /*Fragen Zeile*/
-void frageHintergrund() {
+void frageHintergrund(char* frage) {
 	waagrechtFarbe(5, 48, 31, BLUE);
 	waagrechtFarbe(5, 47, 31, BLUE);
 	waagrechtFarbe(5, 46, 31, BLUE);
@@ -95,12 +95,13 @@ void frageHintergrund() {
 	waagrechtFarbe(5, 43, 31, BLUE);
 	waagrechtFarbe(5, 42, 31, BLUE);
 	waagrechtFarbe(5, 41, 31, BLUE);
+	text2(20, 45, frage);
 	//zeichneRechteck(5, 41, 31, 8, 888888, "s");
 }
 
 
-/*Antwort Zeilen*/
-void antwortenHintergrundA(int farbe) {
+/*Antwort Zeilen, farbe Param, da Farbe variabel*/
+void antwortenHintergrundA(int farbe, char* antwort) {
 	waagrechtFarbe(5, 35, 14, farbe);
 	waagrechtFarbe(5, 34, 14, farbe);
 	waagrechtFarbe(5, 33, 14, farbe);
@@ -112,8 +113,9 @@ void antwortenHintergrundA(int farbe) {
 	hintergrund(1604, SILVER);
 	waagrechtFarbe(5, 31, 14, farbe);
 	waagrechtFarbe(5, 30, 14, farbe);
+	text2(11, 32, antwort);
 }
-void antwortenHintergrundB(int farbe) {
+void antwortenHintergrundB(int farbe, char* antwort) {
 	waagrechtFarbe(22, 35, 14, farbe);
 	waagrechtFarbe(22, 34, 14, farbe);
 	waagrechtFarbe(22, 33, 14, farbe);
@@ -125,8 +127,9 @@ void antwortenHintergrundB(int farbe) {
 	hintergrund(1636, SILVER);
 	waagrechtFarbe(22, 31, 14, farbe);
 	waagrechtFarbe(22, 30, 14, farbe);
+	text2(29, 32, antwort);
 }
-void antwortenHintergrundC(int farbe) {
+void antwortenHintergrundC(int farbe, char* antwort) {
 	waagrechtFarbe(5, 24, 14, farbe);
 	waagrechtFarbe(5, 23, 14, farbe);
 	waagrechtFarbe(5, 22, 14, farbe);
@@ -138,8 +141,9 @@ void antwortenHintergrundC(int farbe) {
 	hintergrund(1054, SILVER);
 	waagrechtFarbe(5, 20, 14, farbe);
 	waagrechtFarbe(5, 19, 14, farbe);
+	text2(11, 21, antwort);
 }
-void antwortenHintergrundD(int farbe) {
+void antwortenHintergrundD(int farbe, char* antwort) {
 	waagrechtFarbe(22, 24, 14, farbe);
 	waagrechtFarbe(22, 23, 14, farbe);
 	waagrechtFarbe(22, 22, 14, farbe);
@@ -151,6 +155,7 @@ void antwortenHintergrundD(int farbe) {
 	hintergrund(1086, SILVER);
 	waagrechtFarbe(22, 20, 14, farbe);
 	waagrechtFarbe(22, 19, 14, farbe);
+	text2(29, 21, antwort);
 }
 
 //Joker-Funktionen
