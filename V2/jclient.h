@@ -20,7 +20,8 @@ void zeichneRechteck(int s, int z, int breite, int hoehe, int farbe, char* form)
 void zeichneFortschrittsanzeige(int aktiveStufe);
 void zeichneWeiterButton();
 void zeichneNeustartButton();
-void frageHintergrund(char* frage);
+void frageHintergrund();
+void frageText(char* frage);
 
 void zeichneAntwortenHintergrundA(int farbe);
 void setzeAntworttextA(char* antwort);

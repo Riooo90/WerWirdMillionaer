@@ -17,6 +17,12 @@ void bereiteSpielfeldVor() {
 	sendMessage(befehl);
 	groesse(50, 50);
 	formen("s");
+	frageHintergrund();
+	zeichneAntwortenHintergrundA(BLUE);
+	zeichneAntwortenHintergrundB(BLUE);
+	zeichneAntwortenHintergrundC(BLUE);
+	zeichneAntwortenHintergrundD(BLUE);
+	
 }
 
 /**
@@ -58,9 +64,9 @@ void main()
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
 				//printf_s("# %i %i", ix, iy);
 				if (richtig(ix, iy, aktiveStufe) == 1) {
-					zeichneWeiterButton();
+					//zeichneWeiterButton();
 					klickeWeiterButton(ix, ix, aktiveStufe);
-					printf("%i", richtig(ix, iy, aktiveStufe));
+					//printf("%i", richtig(ix, iy, aktiveStufe));
 					//frageEinlesen(aktiveStufe);
 					//antwortenEinlesen(aktiveStufe);
 				}

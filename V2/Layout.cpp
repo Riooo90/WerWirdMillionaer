@@ -120,7 +120,7 @@ void zeichneNeustartButton() {
 
 
 /*Fragen Zeile*/
-void frageHintergrund(char* frage) {
+void frageHintergrund() {
 	/*waagrechtFarbe(5, 48, 31, BLUE);
 	waagrechtFarbe(5, 47, 31, BLUE);
 	waagrechtFarbe(5, 46, 31, BLUE);
@@ -137,10 +137,13 @@ void frageHintergrund(char* frage) {
 	/*waagrechtFarbe(5, 43, 31, BLUE);
 	waagrechtFarbe(5, 42, 31, BLUE);
 	waagrechtFarbe(5, 41, 31, BLUE);*/
-	text2(20, 45, frage);
+
 	zeichneRechteck(5, 41, 31, 8, BLUE, "s");
 }
 
+void frageText(char* frage) {
+	text2(20, 45, frage);
+}
 
 /*Antwort Zeilen, farbe Param, da Farbe variabel*/
 void zeichneAntwortenHintergrundA(int farbe) {

@@ -42,26 +42,26 @@ char *antworten[] = { "...einen draufmachen", "...die Nacht durchzechen", "...di
 //lesen Fragen ein und schreiben Sie in eine globale Var
 void frageEinlesen(int aktiveStufe) {
 	frage = fragen[aktiveStufe];
-	frageHintergrund(frage);
+	frageText(frage);
 }
 
 void antwortenEinlesen(int aktiveStufe) {
 	//damit wir alle vier Antworten auslesen koennen
 		//zeichne die antwort Buttons mit der passenden antwort
 	antwort = antworten[(aktiveStufe * 4)];
-	zeichneAntwortenHintergrundA(BLUE);
+	//zeichneAntwortenHintergrundA(BLUE);
 	setzeAntworttextA(antwort);
 
 	antwort = antworten[(aktiveStufe * 4) + 1];
-	zeichneAntwortenHintergrundB(BLUE);
+	//zeichneAntwortenHintergrundB(BLUE);
 	setzeAntworttextB(antwort);
 
 	antwort = antworten[(aktiveStufe * 4) + 2];
-	zeichneAntwortenHintergrundC(BLUE);
+	//zeichneAntwortenHintergrundC(BLUE);
 	setzeAntworttextC(antwort);
 
 	antwort = antworten[(aktiveStufe * 4) + 3];
-	zeichneAntwortenHintergrundD(BLUE);
+	//zeichneAntwortenHintergrundD(BLUE);
 	setzeAntworttextD(antwort);
 }
 //Vergleicht die Texte aus den KLicks, an der Stelle Stufe, ix und iy kommen vom KLick, aktive Stufe übergeben, da abhängig davon, nicht in der fkt als for drin!
@@ -84,7 +84,7 @@ int richtig(int ix, int iy, int aktiveStufe) {
 		}
 		if (ix == 4 && iy == 22) {
 			zeichneAntwortenHintergrundC(GREEN);
-			printf("%s", antwort);
+			//printf("%s", antwort);
 			return 1;
 		}
 		if (ix == 36, iy == 22) {
@@ -112,10 +112,20 @@ int richtig(int ix, int iy, int aktiveStufe) {
 	}
 }
 
+void resetFrageButtons() {
+	zeichneAntwortenHintergrundA(BLUE);
+	zeichneAntwortenHintergrundB(BLUE);
+	zeichneAntwortenHintergrundC(BLUE);
+	zeichneAntwortenHintergrundD(BLUE);
+}
+
 void klickeWeiterButton(int ix, int iy, int aktiveStufe) {
-	if (ix == 16 && iy == 3) {
-		aktiveStufe += 1;
-		frageEinlesen(aktiveStufe);
-		antwortenEinlesen(aktiveStufe);
-	}
+	//if (ix == 16 && iy == 3) {
+	resetFrageButtons();
+	aktiveStufe += 1;
+	zeichneFortschrittsanzeige(aktiveStufe);
+	Sleep(1000);
+	frageEinlesen(aktiveStufe);
+	antwortenEinlesen(aktiveStufe);
+	//}
 }
