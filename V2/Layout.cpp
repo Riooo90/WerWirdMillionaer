@@ -3,7 +3,7 @@
 int startShowGeldliste = 95;
 int i;
 char* GeldStufen[15] = { "50 EURO", "100 EURO", "200 EURO", "300 EURO", "500 EURO", "1000 EURO", "2000 EURO", "4000 EURO", "8000 EURO", "16000 EURO", "32000 EURO", "64000 EURO", "125000 EURO", "500000 EURO", "1 MILLION" };
-int joker5050 = 1, jokerTel = 1, jokerPublikum = 1;//Verfügbarkeit der Joker: 1=vorhanden, 0 = benutzt
+int joker5050 = 1, jokerTel = 1, jokerPublikum = 1; //Verfügbarkeit der Joker: 1=vorhanden, 0 = benutzt
 
 //Fortschrittsanzeige:
 void zeichneFortschrittsanzeige(int aktiveStufe) {
@@ -120,7 +120,7 @@ void zeichneNeustartButton() {
 
 /*Fragen Zeile*/
 void frageHintergrund(char* frage) {
-	waagrechtFarbe(5, 48, 31, BLUE);
+	/*waagrechtFarbe(5, 48, 31, BLUE);
 	waagrechtFarbe(5, 47, 31, BLUE);
 	waagrechtFarbe(5, 46, 31, BLUE);
 	waagrechtFarbe(5, 45, 31, BLUE);
@@ -135,9 +135,9 @@ void frageHintergrund(char* frage) {
 	hintergrund(2286, SILVER);
 	waagrechtFarbe(5, 43, 31, BLUE);
 	waagrechtFarbe(5, 42, 31, BLUE);
-	waagrechtFarbe(5, 41, 31, BLUE);
+	waagrechtFarbe(5, 41, 31, BLUE);*/
 	text2(20, 45, frage);
-	//zeichneRechteck(5, 41, 31, 8, 888888, "s");
+	zeichneRechteck(5, 41, 31, 8, BLUE, "s");
 }
 
 

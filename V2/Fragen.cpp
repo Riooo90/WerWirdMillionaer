@@ -80,6 +80,7 @@ int richtig(int ix, int iy, int aktiveStufe) {
 		}
 		if (ix == 4 && iy == 22) {
 			antwortenHintergrundC(GREEN, antwort);
+			printf("%s", antwort);
 			return 1;
 		}
 		if (ix == 36, iy == 22) {
