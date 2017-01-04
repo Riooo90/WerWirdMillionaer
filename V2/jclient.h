@@ -25,11 +25,16 @@ void frageHintergrund(char* frage);
 void zeichneAntwortenHintergrundA(int farbe);
 void setzeAntworttextA(char* antwort);
 
-void antwortenHintergrundB(int farbe, char* antwort);
+void zeichneAntwortenHintergrundB(int farbe);
+void setzeAntworttextB(char* antwort);
 
-void antwortenHintergrundC(int farbe, char* antwort);
+void zeichneAntwortenHintergrundC(int farbe);
+void setzeAntworttextC(char* antwort);
 
-void antwortenHintergrundD(int farbe, char* antwort);
+void zeichneAntwortenHintergrundD(int farbe);
+void setzeAntworttextD(char* antwort);
+
+void klickeWeiterButton(int ix, int iy, int aktiveStufe);
 
 
 void zeichneJokerbereich();

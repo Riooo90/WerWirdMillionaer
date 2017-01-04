@@ -53,13 +53,16 @@ void antwortenEinlesen(int aktiveStufe) {
 	setzeAntworttextA(antwort);
 
 	antwort = antworten[(aktiveStufe * 4) + 1];
-	antwortenHintergrundB(BLUE, antwort);
+	zeichneAntwortenHintergrundB(BLUE);
+	setzeAntworttextB(antwort);
 
 	antwort = antworten[(aktiveStufe * 4) + 2];
-	antwortenHintergrundC(BLUE, antwort);
+	zeichneAntwortenHintergrundC(BLUE);
+	setzeAntworttextC(antwort);
 
 	antwort = antworten[(aktiveStufe * 4) + 3];
-	antwortenHintergrundD(BLUE, antwort);
+	zeichneAntwortenHintergrundD(BLUE);
+	setzeAntworttextD(antwort);
 }
 //Vergleicht die Texte aus den KLicks, an der Stelle Stufe, ix und iy kommen vom KLick, aktive Stufe übergeben, da abhängig davon, nicht in der fkt als for drin!
 int richtig(int ix, int iy, int aktiveStufe) {
@@ -76,16 +79,16 @@ int richtig(int ix, int iy, int aktiveStufe) {
 			return 1;
 		}
 		if (ix == 36 && iy == 33) {
-			antwortenHintergrundB(GREEN, antwort);
+			zeichneAntwortenHintergrundB(GREEN);
 			return 1;
 		}
 		if (ix == 4 && iy == 22) {
-			antwortenHintergrundC(GREEN, antwort);
+			zeichneAntwortenHintergrundC(GREEN);
 			printf("%s", antwort);
 			return 1;
 		}
 		if (ix == 36, iy == 22) {
-			antwortenHintergrundD(GREEN, antwort);
+			zeichneAntwortenHintergrundD(GREEN);
 			return 1;
 		}
 	}
@@ -95,16 +98,24 @@ int richtig(int ix, int iy, int aktiveStufe) {
 			return 0;
 		}
 		if (ix == 36 && iy == 33) {
-			antwortenHintergrundB(RED, antwort);
+			zeichneAntwortenHintergrundB(RED);
 			return 0;
 		}
 		if (ix == 4 && iy == 22) {
-			antwortenHintergrundC(RED, antwort);
+			zeichneAntwortenHintergrundC(RED);
 			return 0;
 		}
 		if (ix == 36 && iy == 22) {
-			antwortenHintergrundD(RED, antwort);
+			zeichneAntwortenHintergrundD(RED);
 			return 0;
 		}
+	}
+}
+
+void klickeWeiterButton(int ix, int iy, int aktiveStufe) {
+	if (ix == 16 && iy == 3) {
+		aktiveStufe += 1;
+		frageEinlesen(aktiveStufe);
+		antwortenEinlesen(aktiveStufe);
 	}
 }

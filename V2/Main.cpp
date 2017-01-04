@@ -59,6 +59,7 @@ void main()
 				//printf_s("# %i %i", ix, iy);
 				if (richtig(ix, iy, aktiveStufe) == 1) {
 					zeichneWeiterButton();
+					klickeWeiterButton(ix, ix, aktiveStufe);
 					printf("%i", richtig(ix, iy, aktiveStufe));
 					//frageEinlesen(aktiveStufe);
 					//antwortenEinlesen(aktiveStufe);

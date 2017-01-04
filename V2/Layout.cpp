@@ -53,6 +53,7 @@ void zeichneWeiterButton() {
 
 	text(170, "Naechste Frage");
 
+
 	//Spitzen links und rechts
 	for (i = 116; i < 117; i++) {
 		farbe(i, BLUE);
@@ -75,8 +76,8 @@ void zeichneWeiterButton() {
 		hintergrund(i, SILVER);
 	}
 }
+
 /*Neustart Button*/
-//Weiter Button
 void zeichneNeustartButton() {
 
 	for (i = 67; i < 74; i++) {
@@ -154,13 +155,13 @@ void zeichneAntwortenHintergrundA(int farbe) {
 	hintergrund(1604, SILVER);
 	waagrechtFarbe(5, 31, 14, farbe);
 	waagrechtFarbe(5, 30, 14, farbe);
-	//text2(11, 32, antwort);
 }
+
 void setzeAntworttextA(char* antwort) {
 	text2(11, 32, antwort);
 }
 
-void antwortenHintergrundB(int farbe, char* antwort) {
+void zeichneAntwortenHintergrundB(int farbe) {
 	waagrechtFarbe(22, 35, 14, farbe);
 	waagrechtFarbe(22, 34, 14, farbe);
 	waagrechtFarbe(22, 33, 14, farbe);
@@ -172,9 +173,13 @@ void antwortenHintergrundB(int farbe, char* antwort) {
 	hintergrund(1636, SILVER);
 	waagrechtFarbe(22, 31, 14, farbe);
 	waagrechtFarbe(22, 30, 14, farbe);
-	text2(29, 32, antwort);
 }
-void antwortenHintergrundC(int farbe, char* antwort) {
+
+void setzeAntworttextB(char* antwort) {
+	text2(29, 32, antwort);
+	}
+
+void zeichneAntwortenHintergrundC(int farbe) {
 	waagrechtFarbe(5, 24, 14, farbe);
 	waagrechtFarbe(5, 23, 14, farbe);
 	waagrechtFarbe(5, 22, 14, farbe);
@@ -186,9 +191,13 @@ void antwortenHintergrundC(int farbe, char* antwort) {
 	hintergrund(1054, SILVER);
 	waagrechtFarbe(5, 20, 14, farbe);
 	waagrechtFarbe(5, 19, 14, farbe);
+}
+
+void setzeAntworttextC(char* antwort) {
 	text2(11, 21, antwort);
 }
-void antwortenHintergrundD(int farbe, char* antwort) {
+
+void zeichneAntwortenHintergrundD(int farbe) {
 	waagrechtFarbe(22, 24, 14, farbe);
 	waagrechtFarbe(22, 23, 14, farbe);
 	waagrechtFarbe(22, 22, 14, farbe);
@@ -200,6 +209,9 @@ void antwortenHintergrundD(int farbe, char* antwort) {
 	hintergrund(1086, SILVER);
 	waagrechtFarbe(22, 20, 14, farbe);
 	waagrechtFarbe(22, 19, 14, farbe);
+}
+
+void setzeAntworttextD(char* antwort) {
 	text2(29, 21, antwort);
 }
 
