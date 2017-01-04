@@ -124,7 +124,7 @@ void frageHintergrund(char* frage) {
 	/*waagrechtFarbe(5, 48, 31, BLUE);
 	waagrechtFarbe(5, 47, 31, BLUE);
 	waagrechtFarbe(5, 46, 31, BLUE);
-	waagrechtFarbe(5, 45, 31, BLUE);
+	waagrechtFarbe(5, 45, 31, BLUE);*/
 	waagrechtBeides(4, 45, 1, BLUE, "trd");
 	waagrechtBeides(36, 45, 1, BLUE, "tld");
 	hintergrund(2254, SILVER);
@@ -134,7 +134,7 @@ void frageHintergrund(char* frage) {
 	waagrechtBeides(36, 44, 1, BLUE, "tlu");
 	hintergrund(2236, SILVER);
 	hintergrund(2286, SILVER);
-	waagrechtFarbe(5, 43, 31, BLUE);
+	/*waagrechtFarbe(5, 43, 31, BLUE);
 	waagrechtFarbe(5, 42, 31, BLUE);
 	waagrechtFarbe(5, 41, 31, BLUE);*/
 	text2(20, 45, frage);
