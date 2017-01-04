@@ -49,7 +49,8 @@ void antwortenEinlesen(int aktiveStufe) {
 	//damit wir alle vier Antworten auslesen koennen
 		//zeichne die antwort Buttons mit der passenden antwort
 	antwort = antworten[(aktiveStufe * 4)];
-	antwortenHintergrundA(BLUE, antwort);
+	zeichneAntwortenHintergrundA(BLUE);
+	setzeAntworttextA(antwort);
 
 	antwort = antworten[(aktiveStufe * 4) + 1];
 	antwortenHintergrundB(BLUE, antwort);
@@ -71,7 +72,7 @@ int richtig(int ix, int iy, int aktiveStufe) {
 
 	if (ix == loesung[aktiveStufe] && iy == loesung[aktiveStufe + 1]) {
 		if (ix == 4 && iy == 33) {
-			antwortenHintergrundA(GREEN, antwort);
+			zeichneAntwortenHintergrundA(GREEN);
 			return 1;
 		}
 		if (ix == 36 && iy == 33) {
@@ -87,23 +88,23 @@ int richtig(int ix, int iy, int aktiveStufe) {
 			antwortenHintergrundD(GREEN, antwort);
 			return 1;
 		}
-		else {
-			if (ix == 4 && iy == 33) {
-				antwortenHintergrundA(RED, antwort);
-				return 0;
-			}
-			if (ix == 36 && iy == 33) {
-				antwortenHintergrundB(RED, antwort);
-				return 0;
-			}
-			if (ix == 4 && iy == 22) {
-				antwortenHintergrundC(RED, antwort);
-				return 0;
-			}
-			if (ix == 36 && iy == 22) {
-				antwortenHintergrundD(RED, antwort);
-				return 0;
-			}
+	}
+	else {
+		if (ix == 4 && iy == 33) {
+			zeichneAntwortenHintergrundA(RED);
+			return 0;
+		}
+		if (ix == 36 && iy == 33) {
+			antwortenHintergrundB(RED, antwort);
+			return 0;
+		}
+		if (ix == 4 && iy == 22) {
+			antwortenHintergrundC(RED, antwort);
+			return 0;
+		}
+		if (ix == 36 && iy == 22) {
+			antwortenHintergrundD(RED, antwort);
+			return 0;
 		}
 	}
 }

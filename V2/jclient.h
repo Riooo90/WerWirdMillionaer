@@ -21,10 +21,17 @@ void zeichneFortschrittsanzeige(int aktiveStufe);
 void zeichneWeiterButton();
 void zeichneNeustartButton();
 void frageHintergrund(char* frage);
-void antwortenHintergrundA(int farbe, char* antwort);
+
+void zeichneAntwortenHintergrundA(int farbe);
+void setzeAntworttextA(char* antwort);
+
 void antwortenHintergrundB(int farbe, char* antwort);
+
 void antwortenHintergrundC(int farbe, char* antwort);
+
 void antwortenHintergrundD(int farbe, char* antwort);
+
+
 void zeichneJokerbereich();
 void frageEinlesen(int aktiveStufe);
 void antwortenEinlesen(int aktiveStufe);

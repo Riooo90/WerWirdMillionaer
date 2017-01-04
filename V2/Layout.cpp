@@ -142,7 +142,7 @@ void frageHintergrund(char* frage) {
 
 
 /*Antwort Zeilen, farbe Param, da Farbe variabel*/
-void antwortenHintergrundA(int farbe, char* antwort) {
+void zeichneAntwortenHintergrundA(int farbe) {
 	waagrechtFarbe(5, 35, 14, farbe);
 	waagrechtFarbe(5, 34, 14, farbe);
 	waagrechtFarbe(5, 33, 14, farbe);
@@ -154,8 +154,12 @@ void antwortenHintergrundA(int farbe, char* antwort) {
 	hintergrund(1604, SILVER);
 	waagrechtFarbe(5, 31, 14, farbe);
 	waagrechtFarbe(5, 30, 14, farbe);
+	//text2(11, 32, antwort);
+}
+void setzeAntworttextA(char* antwort) {
 	text2(11, 32, antwort);
 }
+
 void antwortenHintergrundB(int farbe, char* antwort) {
 	waagrechtFarbe(22, 35, 14, farbe);
 	waagrechtFarbe(22, 34, 14, farbe);
