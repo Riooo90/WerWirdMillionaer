@@ -8,11 +8,11 @@ int joker5050 = 1, jokerTel = 1, jokerPublikum = 1; //Verfügbarkeit der Joker: 1
 //Fortschrittsanzeige:
 void zeichneFortschrittsanzeige(int aktiveStufe) {
 	for (int i = 0; i < 15; i++) {
-		text(startShowGeldliste + i * 2 * 50, GeldStufen[i]);
+		text2(45, 1 + i * 2, GeldStufen[i]);
 		if (i == aktiveStufe) {
-			farbe(startShowGeldliste - 1 + i * 2 * 50, LIGHTYELLOW);
-			farbe(startShowGeldliste + 1 + i * 2 * 50, LIGHTYELLOW);
-			farbe(startShowGeldliste + i * 2 * 50, LIGHTYELLOW);
+			waagrechtFarbe(43, 1 + i * 2, 5, YELLOW);
+			//farbe(startShowGeldliste + 1 + i * 2 * 50, LIGHTYELLOW);
+			//farbe(startShowGeldliste + i * 2 * 50, LIGHTYELLOW);
 		}
 	}	senkrechtBeides(90, -1, 50, BLUE, "s");
 }
@@ -167,12 +167,13 @@ void frageHintergrund() {
 	/*waagrechtFarbe(5, 48, 31, BLUE);
 	waagrechtFarbe(5, 47, 31, BLUE);
 	waagrechtFarbe(5, 46, 31, BLUE);
-	waagrechtFarbe(5, 45, 31, BLUE);*/
+	waagrechtFarbe(5, 45, 31, BLUE);
+	waagrechtFarbe(5, 44, 31, BLUE);*/
 	waagrechtBeides(4, 45, 1, BLUE, "trd");
 	waagrechtBeides(36, 45, 1, BLUE, "tld");
 	hintergrund(2254, SILVER);
 	hintergrund(2204, SILVER);
-	waagrechtFarbe(5, 44, 31, BLUE);
+
 	waagrechtBeides(4, 44, 1, BLUE, "tru");
 	waagrechtBeides(36, 44, 1, BLUE, "tlu");
 	hintergrund(2236, SILVER);
@@ -223,7 +224,7 @@ void zeichneAntwortenHintergrundB(int farbe) {
 
 void setzeAntworttextB(char* antwort) {
 	text2(29, 32, antwort);
-	}
+}
 
 void zeichneAntwortenHintergrundC(int farbe) {
 	waagrechtFarbe(5, 24, 14, farbe);
