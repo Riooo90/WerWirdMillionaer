@@ -3,7 +3,7 @@
 #include "stdafx.h"
 
 static int feld, ix, iy; //Positionen der Klicks
-int aktiveStufe = 0; //globale Variable für die Fragen zum auslesen					 
+static int aktiveStufe = 0; //globale Variable für die Fragen zum auslesen					 
 int zustand = 0; //Zustand 0 ist der Startzustand
 
 void bereiteSpielfeldVor() {

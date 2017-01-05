@@ -9,14 +9,14 @@ static char* antwort;
 char *fragen[] = { "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, das Ferkel und...?",
 "Was ist meist ziemlich viel?",
 "Wessen Genesung schnell voran schreitet der erholt sich...",
-"Welche Neuerung hielt das Jahr 1984 für deutsche Fernsehzuschauer bereit?",
+"Welche Neuerung hielt das Jahr 1984 fuer deutsche Fernsehzuschauer bereit?",
 "Wer in Dover wohnt,",
 "Johann Wolfgang von Goethes Autobiographie kennt man unter dem Titel...?",
 "Was findet man bei Autos meist in den Varianten gleichlaufend oder gegenlaeufig?",
 "Wessen Ansprüche sollen hierzulande gesetzlich neu geregelt werden?",
 "Wobei besteht die oberste Schicht oft aus dem sogenannten Fondant?",
 "Welcher Buchstabe kam in der Entstehungsgeschichte unseres heute gebraeuchlichen Alphabets erst im Mittelalter hinzu?",
-"Welche Pflanzen zaehlen zur selbsen Familie und sind fue manchen Hobbygaertner zum Verwechseln aehnlich?",
+"Welche Pflanzen zaehlen zur selbsen Familie und sind fuer manchen Hobbygaertner zum Verwechseln aehnlich?",
 "Womit machte sich der 2012 verstorbene Inder Ravi Shankar zur Legende?",
 "Bei welchen beiden Staaten findet man im Ländernamen wie auch im Namen der Hauptstadt keinen anderen Vokal als das A?",
 "Wer muss beim Urlaub im Schwarzwald grundsatzlich die sogenannte Zwei-Meter-Regel beachten?",
@@ -43,6 +43,7 @@ char *antworten[] = { "...einen draufmachen", "...die Nacht durchzechen", "...di
 void frageEinlesen(int aktiveStufe) {
 	frage = fragen[aktiveStufe];
 	frageText(frage);
+	resetNachsteFrageKommtButton();
 }
 
 void antwortenEinlesen(int aktiveStufe) {
@@ -71,24 +72,32 @@ int richtig(int ix, int iy, int aktiveStufe) {
 	c = 4, 22
 	d = 36, 22
 	es gehört immer ein zweier Paar zusammen*/
-	int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 36, 33, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
+	int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 4, 22, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
 	//mal zwei weil ein zweierpaar zusammen gehört für das loesungsarray
 	if (ix == loesung[aktiveStufe*2] && iy == loesung[(aktiveStufe *2)+ 1]) {
 		if (ix == 4 && iy == 33) {
 			zeichneAntwortenHintergrundA(GREEN);
+			zeichneNachsteFrageKommtButton();
+			setzeNaechsteFrageKommtText();
 			return 1;
 		}
 		if (ix == 36 && iy == 33) {
 			zeichneAntwortenHintergrundB(GREEN);
+			zeichneNachsteFrageKommtButton();
+			setzeNaechsteFrageKommtText();
 			return 1;
 		}
 		if (ix == 4 && iy == 22) {
 			zeichneAntwortenHintergrundC(GREEN);
+			zeichneNachsteFrageKommtButton();
+			setzeNaechsteFrageKommtText();
 			//printf("%s", antwort);
 			return 1;
 		}
 		if (ix == 36, iy == 22) {
 			zeichneAntwortenHintergrundD(GREEN);
+			zeichneNachsteFrageKommtButton();
+			setzeNaechsteFrageKommtText();
 			return 1;
 		}
 	}

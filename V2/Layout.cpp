@@ -35,8 +35,8 @@ void zeichneJokerbereich() {
 	waagrechtBeides(91, 33, 9, BLUE, "s");
 }
 
-//Weiter Button
-void zeichneWeiterButton() {
+//Super, die naechste Frage kommt
+void zeichneNachsteFrageKommtButton() {
 
 	for (i = 67; i < 74; i++) {
 		farbe(i, BLUE);
@@ -50,9 +50,6 @@ void zeichneWeiterButton() {
 	for (i = 217; i < 224; i++) {
 		farbe(i, BLUE);
 	}
-
-	text(170, "Naechste Frage");
-
 
 	//Spitzen links und rechts
 	for (i = 116; i < 117; i++) {
@@ -75,6 +72,10 @@ void zeichneWeiterButton() {
 		form(i, "tld");
 		hintergrund(i, SILVER);
 	}
+}
+
+void setzeNaechsteFrageKommtText() {
+	text(170, "Super gemacht! Die nachste Frage kommt!");
 }
 
 /*Neustart Button*/
@@ -113,6 +114,48 @@ void zeichneNeustartButton() {
 	}
 	for (i = 174; i < 175; i++) {
 		farbe(i, BLUE);
+		form(i, "tld");
+		hintergrund(i, SILVER);
+	}
+}
+
+//Reset nachsteFrageKommtButton
+void resetNachsteFrageKommtButton() {
+
+	for (i = 67; i < 74; i++) {
+		farbe(i, SILVER);
+	}
+	for (i = 117; i < 124; i++) {
+		farbe(i, SILVER);
+	}
+	for (i = 167; i < 174; i++) {
+		farbe(i, SILVER);
+	}
+	for (i = 217; i < 224; i++) {
+		farbe(i, SILVER);
+	}
+
+	text(170, "");
+
+
+	//Spitzen links und rechts
+	for (i = 116; i < 117; i++) {
+		farbe(i, SILVER);
+		form(i, "tru");
+		hintergrund(i, SILVER);
+	}
+	for (i = 166; i < 167; i++) {
+		farbe(i, SILVER);
+		form(i, "trd");
+		hintergrund(i, SILVER);
+	}
+	for (i = 124; i < 125; i++) {
+		farbe(i, SILVER);
+		form(i, "tlu");
+		hintergrund(i, SILVER);
+	}
+	for (i = 174; i < 175; i++) {
+		farbe(i, SILVER);
 		form(i, "tld");
 		hintergrund(i, SILVER);
 	}
