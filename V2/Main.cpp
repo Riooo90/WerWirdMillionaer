@@ -4,7 +4,7 @@
 
 static int feld, ix, iy; //Positionen der Klicks
 
-int zustand = 0; //Zustand 0 ist der Startzustand
+//int zustand = 0; //Zustand 0 ist der Startzustand
 
 void bereiteSpielfeldVor() {
 	// jetzt Schriftgroesse veraendern, gilt dann fuer alle neue Texte:
@@ -15,6 +15,12 @@ void bereiteSpielfeldVor() {
 	loeschen();
 	sprintf_s(befehl, 100, "clearAllText \n");
 	sendMessage(befehl);
+
+	// Test mit Bild (Bild-Datei wird relativ zum jserver-Verzeichnis gesucht)
+	//form2(3, 4, "none");
+	//symbolGroesse2(3, 4, 3.0);
+	//sendMessage("image 3 4 wwm.png \n");
+
 	groesse(50, 50);
 	formen("s");
 	frageHintergrund();
@@ -48,12 +54,12 @@ void main()
 {
 	bereiteSpielfeldVor();
 	int aktiveStufe = 0; //globale Variable für die Fragen zum auslesen	
+	int spielende = 0;
 	//Zeichne das Spielfeld
 	zeichneFortschrittsanzeige(aktiveStufe);
 	zeichneJokerbereich();
 	frageEinlesen(aktiveStufe);
 	antwortenEinlesen(aktiveStufe);
-
 
 	for (;;) {
 		//hier bekommen wir unseren Klick, bis Abfrage > 0, also etwas geklickt wurde:
@@ -63,20 +69,27 @@ void main()
 			if (a[0] == '#') {
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
 				//printf_s("# %i %i", ix, iy);
-				if (richtig(ix, iy, aktiveStufe) == 1) {
-
+				switch (richtig(ix, iy, aktiveStufe)) {
+				case 1:
 					aktiveStufe += 1;
 					leseNaechsteFrage(ix, ix, aktiveStufe);
-					//printf("%i", richtig(ix, iy, aktiveStufe));
-					//frageEinlesen(aktiveStufe);
-					//antwortenEinlesen(aktiveStufe);
-				}
-				else {
+					break;
+				case 0:
 					zeichneNeustartButton();
+					spielende = 1;
+					Sleep(3000);
+					break;
+				case 2:
+					//Joker
+					nutzeJoker5050();
 				}
 			}
 		}
 		else {
+			if (spielende == 1) {
+				aktiveStufe = 0;
+				bereiteSpielfeldVor();
+			}
 			Sleep(100);
 		}
 	}

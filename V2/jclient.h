@@ -4,8 +4,6 @@ int sendMessage(char *sendbuf);
 int sendMessageI2(int, int);
 char *getAnswer(void);
 
-
-
 //Eigene:
 void waagrechtFarbe(int s, int z, int n, int f);
 void waagrechtForm(int s, int z, int n, char* f);
@@ -43,6 +41,8 @@ void zeichneJokerbereich();
 void frageEinlesen(int aktiveStufe);
 void antwortenEinlesen(int aktiveStufe);
 int richtig(int ix, int iy, int aktiveStufe);
+
+void nutzeJoker5050();
 
 //grundlegende BOS-Funktionen
 void groesse(int x, int y);
