@@ -49,7 +49,7 @@ void antwortenEinlesen(int aktiveStufe) {
 	//damit wir alle vier Antworten auslesen koennen
 		//zeichne die antwort Buttons mit der passenden antwort
 	antwort = antworten[(aktiveStufe * 4)];
-	//zeichneAntwortenHintergrundA(BLUE);
+	//zeichneAntwortenHintergrundA(BLUE); Sonst malt immer blau drüber obwohl da
 	setzeAntworttextA(antwort);
 
 	antwort = antworten[(aktiveStufe * 4) + 1];
@@ -72,8 +72,8 @@ int richtig(int ix, int iy, int aktiveStufe) {
 	d = 36, 22
 	es gehört immer ein zweier Paar zusammen*/
 	int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 36, 33, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
-
-	if (ix == loesung[aktiveStufe] && iy == loesung[aktiveStufe + 1]) {
+	//mal zwei weil ein zweierpaar zusammen gehört für das loesungsarray
+	if (ix == loesung[aktiveStufe*2] && iy == loesung[(aktiveStufe *2)+ 1]) {
 		if (ix == 4 && iy == 33) {
 			zeichneAntwortenHintergrundA(GREEN);
 			return 1;
@@ -119,7 +119,7 @@ void resetFrageButtons() {
 	zeichneAntwortenHintergrundD(BLUE);
 }
 
-void klickeWeiterButton(int ix, int iy, int aktiveStufe) {
+void leseNaechsteFrage(int ix, int iy, int aktiveStufe) {
 	//if (ix == 16 && iy == 3) {
 	resetFrageButtons();
 	aktiveStufe += 1;

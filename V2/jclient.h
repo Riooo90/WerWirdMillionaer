@@ -35,7 +35,7 @@ void setzeAntworttextC(char* antwort);
 void zeichneAntwortenHintergrundD(int farbe);
 void setzeAntworttextD(char* antwort);
 
-void klickeWeiterButton(int ix, int iy, int aktiveStufe);
+void leseNaechsteFrage(int ix, int iy, int aktiveStufe);
 
 
 void zeichneJokerbereich();
