@@ -37,8 +37,8 @@ void senkrechtBeides(int s, int z, int n, int farbe, char* form) {
 }
 
 void zeichneRechteck(int s, int z, int breite, int hoehe, int farbe, char* form) {
-	for (int i = 0; i < hoehe; i++) {
-		for (int j = 0; j < breite; j++) {
+	for (int i = 0; i < breite; i++) {
+		for (int j = 0; j < hoehe; j++) {
 			farbe2(s + i, z + j, farbe);
 			form2(s + i, z + j, form);
 		}
