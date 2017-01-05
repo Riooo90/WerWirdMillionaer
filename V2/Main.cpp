@@ -3,7 +3,7 @@
 #include "stdafx.h"
 
 static int feld, ix, iy; //Positionen der Klicks
-static int aktiveStufe = 0; //globale Variable für die Fragen zum auslesen					 
+
 int zustand = 0; //Zustand 0 ist der Startzustand
 
 void bereiteSpielfeldVor() {
@@ -47,7 +47,7 @@ void bekommeKlickPosition() {
 void main()
 {
 	bereiteSpielfeldVor();
-
+	int aktiveStufe = 0; //globale Variable für die Fragen zum auslesen	
 	//Zeichne das Spielfeld
 	zeichneFortschrittsanzeige(aktiveStufe);
 	zeichneJokerbereich();
@@ -64,6 +64,8 @@ void main()
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
 				//printf_s("# %i %i", ix, iy);
 				if (richtig(ix, iy, aktiveStufe) == 1) {
+
+					aktiveStufe += 1;
 					leseNaechsteFrage(ix, ix, aktiveStufe);
 					//printf("%i", richtig(ix, iy, aktiveStufe));
 					//frageEinlesen(aktiveStufe);

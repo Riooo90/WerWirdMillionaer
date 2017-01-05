@@ -131,7 +131,6 @@ void resetFrageButtons() {
 void leseNaechsteFrage(int ix, int iy, int aktiveStufe) {
 	//if (ix == 16 && iy == 3) {
 	resetFrageButtons();
-	aktiveStufe += 1;
 	zeichneFortschrittsanzeige(aktiveStufe);
 	Sleep(1000);
 	frageEinlesen(aktiveStufe);
