@@ -65,9 +65,12 @@ int pruefeKlickAktion(int ix, int iy, int aktiveStufe) {
 		jokerTel = 0;
 		farbe2(43, 39, RED);
 	}
-	/*else if (ix == 43 && iy == 41 && jokerPublikum == 1) { //PUBLIKUMSJOKER
-		return 3;
-	}*/
+	else if (ix == 43 && iy == 41 && jokerPublikum == 1) { //PUBLIKUMSJOKER
+		ix = loesung[aktiveStufe * 2];
+		iy = loesung[(aktiveStufe * 2) + 1];
+		jokerPublikum = 0;
+		farbe2(43, 41, RED);
+	}
 	if (ix == loesung[aktiveStufe * 2] && iy == loesung[(aktiveStufe * 2) + 1]) {	//mal zwei weil ein zweierpaar zusammen gehört für das loesungsarray
 		if (ix == 4 && iy == 33) {
 			zeichneAntwortenHintergrundA(GREEN);
@@ -125,8 +128,13 @@ void leseNaechsteFrage(int ix, int iy, int aktiveStufe) {
 	antwortenEinlesen(aktiveStufe);
 }
 
+void resetJoker() {
+	joker5050 = 1;
+	jokerPublikum = 1;
+	jokerTel = 1;
+}
 
-//Joker-Funktionen
+/*Joker-Funktionen
 void nutzeJoker5050() {
 	printf("%s", "Joker 5050 benutzt!");
 }
@@ -143,4 +151,4 @@ void nutzeJokerPublikum(int ix, int iy, int aktiveStufe) {
 	jokerPublikum = 0;
 	farbe2(43, 41, RED);
 	//return pruefeKlickAktion(ix, iy, aktiveStufe);
-}
+}*/

@@ -33,6 +33,7 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 	zeichneJokerbereich();
 	frageEinlesen(aktiveStufe);
 	antwortenEinlesen(aktiveStufe);
+	resetJoker();
 
 }
 
