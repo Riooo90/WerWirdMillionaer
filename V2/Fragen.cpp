@@ -3,6 +3,7 @@
 static char* frage;
 static char* antwort;
 
+int joker5050 = 1, jokerTel = 1, jokerPublikum = 1; //Verfügbarkeit der Joker: 1=vorhanden, 0 = benutzt
 //Loesung 0 = falsch, 1 = richtig, in der main wird ausgelesen was FKR zurück gibt
 
 //Schrittweite 1
@@ -73,6 +74,22 @@ int richtig(int ix, int iy, int aktiveStufe) {
 	d = 36, 22
 	es gehört immer ein zweier Paar zusammen*/
 	int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 4, 22, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
+	
+	//Jokerbutton-Klicks abfragen:
+	if (ix == 43 && iy == 39 && jokerTel ==1) { //TELEFONJOKER
+		ix = loesung[aktiveStufe * 2];
+		iy = loesung[(aktiveStufe * 2) + 1];
+		jokerTel = 0;
+		farbe2(43, 39, RED);
+		//richtig(ix, iy, aktiveStufe);
+	}/*
+	else if (ix == 43 && iy == 41 && jokerPublikum == 1) { //PUBLIKUMSJOKER
+		ix = loesung[aktiveStufe * 2];
+		iy = loesung[(aktiveStufe * 2) + 1];
+		jokerPublikum = 0;
+		farbe2(43, 41, RED);
+	}*/
+
 	//mal zwei weil ein zweierpaar zusammen gehört für das loesungsarray
 	if (ix == loesung[aktiveStufe*2] && iy == loesung[(aktiveStufe *2)+ 1]) {
 		if (ix == 4 && iy == 33) {
@@ -119,6 +136,7 @@ int richtig(int ix, int iy, int aktiveStufe) {
 			return 0;
 		}
 	}
+	return 10; //Fehler
 }
 
 void resetFrageButtons() {
@@ -129,11 +147,10 @@ void resetFrageButtons() {
 }
 
 void leseNaechsteFrage(int ix, int iy, int aktiveStufe) {
-	//if (ix == 16 && iy == 3) {
 	resetFrageButtons();
 	zeichneFortschrittsanzeige(aktiveStufe);
 	Sleep(1000);
 	frageEinlesen(aktiveStufe);
 	antwortenEinlesen(aktiveStufe);
-	//}
+
 }

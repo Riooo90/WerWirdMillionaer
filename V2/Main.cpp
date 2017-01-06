@@ -98,7 +98,6 @@ void main()
 				Sleep(1000);
 				bereiteSpielfeldVor(aktiveStufe);
 				spielende = 0;
-
 			}
 			Sleep(100);
 		}
