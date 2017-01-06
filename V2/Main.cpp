@@ -69,15 +69,16 @@ void main()
 			if (a[0] == '#') {
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
 				//printf_s("# %i %i", ix, iy);
+				printf("%d", richtig(ix, iy, aktiveStufe));
 				switch (richtig(ix, iy, aktiveStufe)) {
 				case 1:
 					aktiveStufe += 1;
 					leseNaechsteFrage(ix, ix, aktiveStufe);
 					break;
-				case 0:
+				case 0:// Null als Default 
 					zeichneNeustartButton();
+					Sleep(1000);
 					spielende = 1;
-					Sleep(3000);
 					break;
 				case 2:
 					//Joker
@@ -87,8 +88,11 @@ void main()
 		}
 		else {
 			if (spielende == 1) {
+				printf("%s", "Spielende");
 				aktiveStufe = 0;
+				Sleep(1000);
 				bereiteSpielfeldVor();
+				
 			}
 			Sleep(100);
 		}

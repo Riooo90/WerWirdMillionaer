@@ -38,49 +38,45 @@ void zeichneJokerbereich() {
 //Super, die naechste Frage kommt
 void zeichneNachsteFrageKommtButton() {
 
-	for (i = 67; i < 74; i++) {
+	for (i = 57; i < 84; i++) {
 		farbe(i, BLUE);
 	}
-	for (i = 117; i < 124; i++) {
+	for (i = 107; i < 134; i++) {
 		farbe(i, BLUE);
 	}
-	for (i = 167; i < 174; i++) {
+	for (i = 157; i < 184; i++) {
 		farbe(i, BLUE);
 	}
-	for (i = 217; i < 224; i++) {
+	for (i = 207; i < 234; i++) {
 		farbe(i, BLUE);
 	}
 
 	//Spitzen links und rechts
-	for (i = 116; i < 117; i++) {
-		farbe(i, BLUE);
-		form(i, "tru");
-		hintergrund(i, SILVER);
-	}
-	for (i = 166; i < 167; i++) {
-		farbe(i, BLUE);
-		form(i, "trd");
-		hintergrund(i, SILVER);
-	}
-	for (i = 124; i < 125; i++) {
-		farbe(i, BLUE);
-		form(i, "tlu");
-		hintergrund(i, SILVER);
-	}
-	for (i = 174; i < 175; i++) {
-		farbe(i, BLUE);
-		form(i, "tld");
-		hintergrund(i, SILVER);
-	}
+		farbe(106, BLUE);
+		form(106, "tru");
+		hintergrund(106, SILVER);
+
+		farbe(156, BLUE);
+		form(156, "trd");
+		hintergrund(156, SILVER);
+	
+		farbe(134, BLUE);
+		form(134, "tlu");
+		hintergrund(134, SILVER);
+	
+		farbe(184, BLUE);
+		form(184, "tld");
+		hintergrund(184, SILVER);
+	
 }
 
 void setzeNaechsteFrageKommtText() {
-	text(170, "Super gemacht! Die nachste Frage kommt!");
+	text(170, "Super gemacht! Die naechste Frage kommt!");
 }
 
 /*Neustart Button*/
 void zeichneNeustartButton() {
-
+	printf("%s", "zeichne Neustart");
 	for (i = 67; i < 74; i++) {
 		farbe(i, BLUE);
 	}
@@ -122,44 +118,38 @@ void zeichneNeustartButton() {
 //Reset nachsteFrageKommtButton
 void resetNachsteFrageKommtButton() {
 
-	for (i = 67; i < 74; i++) {
-		farbe(i, SILVER);
-	}
-	for (i = 117; i < 124; i++) {
-		farbe(i, SILVER);
-	}
-	for (i = 167; i < 174; i++) {
-		farbe(i, SILVER);
-	}
-	for (i = 217; i < 224; i++) {
-		farbe(i, SILVER);
-	}
+		for (i = 57; i < 84; i++) {
+			farbe(i, SILVER);
+		}
+		for (i = 107; i < 134; i++) {
+			farbe(i, SILVER);
+		}
+		for (i = 157; i < 184; i++) {
+			farbe(i, SILVER);
+		}
+		for (i = 207; i < 234; i++) {
+			farbe(i, SILVER);
+		}
 
-	text(170, "");
+		//Spitzen links und rechts
+		farbe(106, SILVER);
+		form(106, "tru");
+		hintergrund(106, SILVER);
 
+		farbe(156, SILVER);
+		form(156, "trd");
+		hintergrund(156, SILVER);
 
-	//Spitzen links und rechts
-	for (i = 116; i < 117; i++) {
-		farbe(i, SILVER);
-		form(i, "tru");
-		hintergrund(i, SILVER);
+		farbe(134, SILVER);
+		form(134, "tlu");
+		hintergrund(134, SILVER);
+
+		farbe(184, SILVER);
+		form(184, "tld");
+		hintergrund(184, SILVER);
+
+		text(107, "");
 	}
-	for (i = 166; i < 167; i++) {
-		farbe(i, SILVER);
-		form(i, "trd");
-		hintergrund(i, SILVER);
-	}
-	for (i = 124; i < 125; i++) {
-		farbe(i, SILVER);
-		form(i, "tlu");
-		hintergrund(i, SILVER);
-	}
-	for (i = 174; i < 175; i++) {
-		farbe(i, SILVER);
-		form(i, "tld");
-		hintergrund(i, SILVER);
-	}
-}
 
 
 /*Fragen Zeile*/
