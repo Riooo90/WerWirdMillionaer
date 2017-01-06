@@ -5,6 +5,13 @@ int i;
 char* GeldStufen[15] = { "50 EURO", "100 EURO", "200 EURO", "300 EURO", "500 EURO", "1000 EURO", "2000 EURO", "4000 EURO", "8000 EURO", "16000 EURO", "32000 EURO", "64000 EURO", "125000 EURO", "500000 EURO", "1 MILLION" };
 
 
+void resetAntwortenButtons() {
+	zeichneAntwortenHintergrundA(BLUE);
+	zeichneAntwortenHintergrundB(BLUE);
+	zeichneAntwortenHintergrundC(BLUE);
+	zeichneAntwortenHintergrundD(BLUE);
+}
+
 //Fortschrittsanzeige:
 void zeichneFortschrittsanzeige(int aktiveStufe) {
 	for (int i = 0; i < 15; i++) {
@@ -260,15 +267,4 @@ void zeichneAntwortenHintergrundD(int farbe) {
 
 void setzeAntworttextD(char* antwort) {
 	text2(29, 21, antwort);
-}
-
-//Joker-Funktionen
-void nutzeJoker5050() {
-	printf("%s", "Joker 5050 benutzt!");
-}
-void nutzeJokerTelefon() {
-
-}
-void nutzeJokerPublikum() {
-
 }

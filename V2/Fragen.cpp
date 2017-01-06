@@ -1,12 +1,14 @@
 #include "stdafx.h"
 
-static char* frage;
-static char* antwort;
-
 int joker5050 = 1, jokerTel = 1, jokerPublikum = 1; //Verfügbarkeit der Joker: 1=vorhanden, 0 = benutzt
+
+/*Positionen der richtigen Antworten: a = 4, 33 ; b = 36, 33; c = 4, 22; d = 36, 22
+Es gehört immer ein zweier Paar zusammen*/
+int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 4, 22, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
+
 //Loesung 0 = falsch, 1 = richtig, in der main wird ausgelesen was FKR zurück gibt
 
-//Schrittweite 1
+//15 Fragen für jede Stufe eine: Schrittweite 1
 char *fragen[] = { "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, das Ferkel und...?",
 "Was ist meist ziemlich viel?",
 "Wessen Genesung schnell voran schreitet der erholt sich...",
@@ -23,7 +25,7 @@ char *fragen[] = { "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, d
 "Wer muss beim Urlaub im Schwarzwald grundsatzlich die sogenannte Zwei-Meter-Regel beachten?",
 "Welchen Eintrag findet man im Urduden von 1880 nicht?" };
 
-//Schrittweite 4
+//60 Antowerten für jede Stufe vier: Schrittweite 4
 char *antworten[] = { "...einen draufmachen", "...die Nacht durchzechen", "...die Sau rauslassen", "...auf die Kacke hauen",
 "stolze Summe", "selbstbewusste Differenz", "arroganter Quotient", "hochmuetiges Produkt",
 "...hinguckends", "...anschauends", "...zusehends","...glotzends",
@@ -40,58 +42,33 @@ char *antworten[] = { "...einen draufmachen", "...die Nacht durchzechen", "...di
 "Nichtschwimmer", "Hundebesitzer", "Mountainbiker", "Wohnmobilfahrer",
 "Dynamit", "Gluehlampe", "Batterie", "Mikrophon" };
 
-//lesen Fragen ein und schreiben Sie in eine globale Var
+/* liest die Frage fuer die aktuelle Stufe aus dem Frage-Array ein und schreibt sie in den Frage-Button */
 void frageEinlesen(int aktiveStufe) {
-	frage = fragen[aktiveStufe];
-	frageText(frage);
+	frageText(fragen[aktiveStufe]);
 	resetNachsteFrageKommtButton();
 }
 
+/* liest die 4 Antworten fuer die aktuelle Stufe aus dem Antworten-Array ein und schreibt sie in die Buttons */
 void antwortenEinlesen(int aktiveStufe) {
-	//damit wir alle vier Antworten auslesen koennen
-		//zeichne die antwort Buttons mit der passenden antwort
-	antwort = antworten[(aktiveStufe * 4)];
-	//zeichneAntwortenHintergrundA(BLUE); Sonst malt immer blau drüber obwohl da
-	setzeAntworttextA(antwort);
-
-	antwort = antworten[(aktiveStufe * 4) + 1];
-	//zeichneAntwortenHintergrundB(BLUE);
-	setzeAntworttextB(antwort);
-
-	antwort = antworten[(aktiveStufe * 4) + 2];
-	//zeichneAntwortenHintergrundC(BLUE);
-	setzeAntworttextC(antwort);
-
-	antwort = antworten[(aktiveStufe * 4) + 3];
-	//zeichneAntwortenHintergrundD(BLUE);
-	setzeAntworttextD(antwort);
+	setzeAntworttextA(antworten[(aktiveStufe * 4)]);
+	setzeAntworttextB(antworten[(aktiveStufe * 4) + 1]);
+	setzeAntworttextC(antworten[(aktiveStufe * 4) + 2]);
+	setzeAntworttextD(antworten[(aktiveStufe * 4) + 3]);
 }
-//Vergleicht die Texte aus den KLicks, an der Stelle Stufe, ix und iy kommen vom KLick, aktive Stufe übergeben, da abhängig davon, nicht in der fkt als for drin!
-int richtig(int ix, int iy, int aktiveStufe) {
-	/*	a = 4, 33
-	b = 36, 33
-	c = 4, 22
-	d = 36, 22
-	es gehört immer ein zweier Paar zusammen*/
-	int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 4, 22, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
-	
+
+/* Vergleicht die Texte aus den KLicks, an der Stelle Stufe, ix und iy kommen vom KLick, aktive Stufe übergeben, da abhängig davon, nicht in der fkt als for drin! */
+int pruefeKlickAktion(int ix, int iy, int aktiveStufe) {
 	//Jokerbutton-Klicks abfragen:
-	if (ix == 43 && iy == 39 && jokerTel ==1) { //TELEFONJOKER
+	if (ix == 43 && iy == 39 && jokerTel == 1) { //TELEFONJOKER
 		ix = loesung[aktiveStufe * 2];
 		iy = loesung[(aktiveStufe * 2) + 1];
 		jokerTel = 0;
 		farbe2(43, 39, RED);
-		//richtig(ix, iy, aktiveStufe);
-	}/*
-	else if (ix == 43 && iy == 41 && jokerPublikum == 1) { //PUBLIKUMSJOKER
-		ix = loesung[aktiveStufe * 2];
-		iy = loesung[(aktiveStufe * 2) + 1];
-		jokerPublikum = 0;
-		farbe2(43, 41, RED);
+	}
+	/*else if (ix == 43 && iy == 41 && jokerPublikum == 1) { //PUBLIKUMSJOKER
+		return 3;
 	}*/
-
-	//mal zwei weil ein zweierpaar zusammen gehört für das loesungsarray
-	if (ix == loesung[aktiveStufe*2] && iy == loesung[(aktiveStufe *2)+ 1]) {
+	if (ix == loesung[aktiveStufe * 2] && iy == loesung[(aktiveStufe * 2) + 1]) {	//mal zwei weil ein zweierpaar zusammen gehört für das loesungsarray
 		if (ix == 4 && iy == 33) {
 			zeichneAntwortenHintergrundA(GREEN);
 			zeichneNachsteFrageKommtButton();
@@ -139,18 +116,31 @@ int richtig(int ix, int iy, int aktiveStufe) {
 	return 10; //Fehler
 }
 
-void resetFrageButtons() {
-	zeichneAntwortenHintergrundA(BLUE);
-	zeichneAntwortenHintergrundB(BLUE);
-	zeichneAntwortenHintergrundC(BLUE);
-	zeichneAntwortenHintergrundD(BLUE);
-}
 
 void leseNaechsteFrage(int ix, int iy, int aktiveStufe) {
-	resetFrageButtons();
+	resetAntwortenButtons();
 	zeichneFortschrittsanzeige(aktiveStufe);
 	Sleep(1000);
 	frageEinlesen(aktiveStufe);
 	antwortenEinlesen(aktiveStufe);
+}
 
+
+//Joker-Funktionen
+void nutzeJoker5050() {
+	printf("%s", "Joker 5050 benutzt!");
+}
+int nutzeJokerTelefon(int ix, int iy, int aktiveStufe) {
+	ix = loesung[aktiveStufe * 2];
+	iy = loesung[(aktiveStufe * 2) + 1];
+	jokerTel = 0;
+	farbe2(43, 39, RED);
+	return pruefeKlickAktion(ix, iy, aktiveStufe);
+}
+void nutzeJokerPublikum(int ix, int iy, int aktiveStufe) {
+	ix = loesung[aktiveStufe * 2];
+	iy = loesung[(aktiveStufe * 2) + 1];
+	jokerPublikum = 0;
+	farbe2(43, 41, RED);
+	//return pruefeKlickAktion(ix, iy, aktiveStufe);
 }

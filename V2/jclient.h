@@ -40,9 +40,12 @@ void resetNachsteFrageKommtButton();
 void zeichneJokerbereich();
 void frageEinlesen(int aktiveStufe);
 void antwortenEinlesen(int aktiveStufe);
-int richtig(int ix, int iy, int aktiveStufe);
+int pruefeKlickAktion(int ix, int iy, int aktiveStufe);
 
+void resetAntwortenButtons();
 void nutzeJoker5050();
+int nutzeJokerTelefon(int ix, int iy, int aktiveStufe);
+void nutzeJokerPublikum(int ix, int iy, int aktiveStufe);
 
 //grundlegende BOS-Funktionen
 void groesse(int x, int y);

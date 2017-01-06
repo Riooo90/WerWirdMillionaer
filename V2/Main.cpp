@@ -70,24 +70,25 @@ void main()
 		//hier bekommen wir unseren Klick, bis Abfrage > 0, also etwas geklickt wurde:
 		char *a = abfragen();
 		if (strlen(a) > 0) {
-			printf("Nachricht: %s\n", a);
+			//printf("Nachricht: %s\n", a);
 			if (a[0] == '#') {
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
 				//printf_s("# %i %i", ix, iy);
-				printf("%d", richtig(ix, iy, aktiveStufe));
-				switch (richtig(ix, iy, aktiveStufe)) {
-				case 1:
+				//printf("%d", pruefeKlickAktion(ix, iy, aktiveStufe));
+				switch (pruefeKlickAktion(ix, iy, aktiveStufe)) {
+				/*case 2: //Joker Telefon benutzt
+					nutzeJokerTelefon(ix, iy, aktiveStufe);
+					//nutzeJokerPublikum(ix, iy, aktiveStufe);
+					break;*/
+				case 1: //Frage richtig beantwortet
 					aktiveStufe += 1;
 					leseNaechsteFrage(ix, ix, aktiveStufe);
 					break;
-				case 0:// Null als Default 
+				case 0: //Frage falsch beantwortet
 					zeichneNeustartButton();
 					Sleep(1000);
 					spielende = 1;
 					break;
-				case 2:
-					//Joker
-					nutzeJoker5050();
 				}
 			}
 		}
