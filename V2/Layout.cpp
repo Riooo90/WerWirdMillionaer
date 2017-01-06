@@ -148,7 +148,7 @@ void resetNachsteFrageKommtButton() {
 		form(184, "tld");
 		hintergrund(184, SILVER);
 
-		text(107, "");
+		text(107, " ");
 	}
 
 
