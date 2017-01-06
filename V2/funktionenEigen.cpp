@@ -31,6 +31,7 @@ void senkrechtForm(int s, int z, int n, char* f) {
 }
 void senkrechtBeides(int s, int z, int n, int farbe, char* form) {
 	for (int i = 0; i < n; i++) {
+		printf("%i", i);
 		farbe2(s, z + i, farbe);
 		form2(s, z + i, form);
 	}
