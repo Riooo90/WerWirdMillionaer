@@ -11,9 +11,9 @@ void zeichneFortschrittsanzeige(int aktiveStufe) {
 		text2(45, 1 + i * 2, GeldStufen[i]);
 		if (i == aktiveStufe) {
 			waagrechtFarbe(43, 1 + i * 2, 5, YELLOW);
-			if (aktiveStufe == 4 || aktiveStufe == 9) {
+			/*if (aktiveStufe == 4 || aktiveStufe == 9) {
 				farbe2(42, 1 + i * 2, GREEN);
-			}
+			}*/
 		}
 		if (i == 4 || i == 9) {
 			form2(42, 1 + i * 2, "*");
