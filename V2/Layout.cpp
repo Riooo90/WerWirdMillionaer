@@ -3,6 +3,7 @@
 int startShowGeldliste = 95;
 int i;
 char* GeldStufen[15] = { "50 EURO", "100 EURO", "200 EURO", "300 EURO", "500 EURO", "1000 EURO", "2000 EURO", "4000 EURO", "8000 EURO", "16000 EURO", "32000 EURO", "64000 EURO", "125000 EURO", "500000 EURO", "1 MILLION" };
+char* GeldStufenFrage[15] = { "50 EURO - Frage", "100 EURO - Frage", "200 EURO - Frage", "300 EURO - Frage", "500 EURO - Frage", "1000 EURO - Frage", "2000 EURO - Frage", "4000 EURO - Frage", "8000 EURO - Frage", "16000 EURO - Frage", "32000 EURO - Frage", "64000 EURO - Frage", "125000 EURO - Frage", "500000 EURO - Frage", "1 MILLION EURO - Frage" };
 
 
 void resetAntwortenButtons() {
@@ -194,7 +195,7 @@ void zeichneNeustartButton(int aktiveStufe) {
 		text(170, "Du hast 500 Euro gewonnen");
 	}
 
-	else if (aktiveStufe < 15) {
+	else if (aktiveStufe < 14) {
 		for (i = 415; i < 426; i++) {
 			farbe(i, GREEN);
 		}
@@ -250,8 +251,9 @@ void frageHintergrund() {
 	zeichneRechteck(5, 41, 31, 8, BLUE, "s");
 }
 
-void frageText(char* frage) {
+void frageText(char* frage, int aktiveStufe) {
 	text2(20, 45, frage);
+	text2(20, 42, GeldStufenFrage[aktiveStufe]);
 }
 
 /*Antwort Zeilen, farbe Param, da Farbe variabel*/

@@ -19,7 +19,7 @@ void zeichneFortschrittsanzeige(int aktiveStufe);
 void zeichneNachsteFrageKommtButton();
 void zeichneNeustartButton(int aktiveStufe);
 void frageHintergrund();
-void frageText(char* frage);
+void frageText(char* frage, int aktiveStufe);
 
 void zeichneAntwortenHintergrundA(int farbe);
 void setzeAntworttextA(char* antwort);

@@ -44,7 +44,7 @@ char *antworten[] = { "...einen draufmachen", "...die Nacht durchzechen", "...di
 
 /* liest die Frage fuer die aktuelle Stufe aus dem Frage-Array ein und schreibt sie in den Frage-Button */
 void frageEinlesen(int aktiveStufe) {
-	frageText(fragen[aktiveStufe]);
+	frageText(fragen[aktiveStufe], aktiveStufe);
 	if (aktiveStufe != 0) {
 		resetNachsteFrageKommtButton();
 	}

@@ -66,7 +66,7 @@ void bekommeKlickPosition() {
 
 void main()
 {
-	int aktiveStufe = 0; //globale Variable für die Fragen zum auslesen	
+	int aktiveStufe = 13; //globale Variable für die Fragen zum auslesen	
 	bereiteSpielfeldVor(aktiveStufe);
 	int spielende = 0;
 	/*Zeichne das Spielfeld
@@ -96,6 +96,8 @@ void main()
 					}
 					else {
 						zeichneNeustartButton(aktiveStufe);
+						spielende = 1;
+						Sleep(1000);
 					}
 					break;
 				case 0: //Frage falsch beantwortet
