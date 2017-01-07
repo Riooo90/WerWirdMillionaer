@@ -2,17 +2,7 @@
 
 #include "stdafx.h"
 
-
-/*
-TODO:
-Aussteigen
-Einblenden aktueller Stufe/Frage
-Gewinnsumme einblenden
-max. Gewinnsumme enden
-*/
 static int feld, ix, iy; //Positionen der Klicks
-
-//int zustand = 0; //Zustand 0 ist der Startzustand
 
 void bereiteSpielfeldVor(int aktiveStufe) {
 	// jetzt Schriftgroesse veraendern, gilt dann fuer alle neue Texte:
@@ -46,45 +36,17 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 
 }
 
-/**
-ermittelt die Positon des geklickten Feldes und setzt in die globalen Variablen ix und iy die Positionen des aktuellen Feldes
-
-void bekommeKlickPosition() {
-	for (;;) {
-		char *a = abfragen();
-		if (strlen(a) > 0) {
-			printf("Nachricht: %s\n", a);
-			if (a[0] == '#') {
-				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
-				//printf_s("# %i %i", ix, iy);
-			}
-		}
-		else {
-			Sleep(100);
-		}
-	}
-}**/
-
 void main()
 {
 	int aktiveStufe = 13; //globale Variable für die Fragen zum auslesen	
 	bereiteSpielfeldVor(aktiveStufe);
 	int spielende = 0;
-	/*Zeichne das Spielfeld
-	zeichneFortschrittsanzeige(aktiveStufe);
-	zeichneJokerbereich();
-	frageEinlesen(aktiveStufe);
-	antwortenEinlesen(aktiveStufe);*/
 
-	for (;;) {
-		//hier bekommen wir unseren Klick, bis Abfrage > 0, also etwas geklickt wurde:
-		char *a = abfragen();
+	for (;;) {	
+		char *a = abfragen(); //hier bekommen wir unseren Klick
 		if (strlen(a) > 0) {
-			//printf("Nachricht: %s\n", a);
 			if (a[0] == '#') {
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
-				//printf_s("# %i %i", ix, iy);
-				//printf("%d", pruefeKlickAktion(ix, iy, aktiveStufe));
 				switch (pruefeKlickAktion(ix, iy, aktiveStufe)) {
 				case 3:
 					gebeAbbruchSummeAus(aktiveStufe);
@@ -112,7 +74,6 @@ void main()
 		}
 		else {
 			if (spielende == 1) {
-				printf("%s", "Spielende");
 				aktiveStufe = 0;
 				Sleep(1000);
 				bereiteSpielfeldVor(aktiveStufe);
