@@ -71,19 +71,19 @@ void zeichneNachsteFrageKommtButton() {
 
 	//Spitzen links und rechts
 	farbe(106, BLUE);
-	form(106, "tru");
+	form(106, "s");
 	hintergrund(106, SILVER);
 
 	farbe(156, BLUE);
-	form(156, "trd");
+	form(156, "s");
 	hintergrund(156, SILVER);
 
 	farbe(134, BLUE);
-	form(134, "tlu");
+	form(134, "s");
 	hintergrund(134, SILVER);
 
 	farbe(184, BLUE);
-	form(184, "tld");
+	form(184, "s");
 	hintergrund(184, SILVER);
 
 }
@@ -110,20 +110,20 @@ void resetNachsteFrageKommtButton() {
 
 	//Spitzen links und rechts
 	farbe(106, SILVER);
-	form(106, "tru");
-	hintergrund(106, SILVER);
+	form(106, "s");
+	hintergrund(106, BLUE);
 
 	farbe(156, SILVER);
-	form(156, "trd");
-	hintergrund(156, SILVER);
+	form(156, "s");
+	hintergrund(156, BLUE);
 
 	farbe(134, SILVER);
-	form(134, "tlu");
-	hintergrund(134, SILVER);
+	form(134, "s");
+	hintergrund(134, BLUE);
 
 	farbe(184, SILVER);
-	form(184, "tld");
-	hintergrund(184, SILVER);
+	form(184, "s");
+	hintergrund(184, BLUE);
 
 	text(170, "");
 }
@@ -148,20 +148,20 @@ void zeichneNeustartButton(int aktiveStufe) {
 
 	//Spitzen links und rechts
 		farbe(114, BLUE);
-		form(114, "tru");
-		hintergrund(114, SILVER);
+		form(114, "s");
+		hintergrund(114, BLUE);
 	
 		farbe(164, BLUE);
-		form(164, "trd");
-		hintergrund(164, SILVER);
+		form(164, "s");
+		hintergrund(164, BLUE);
 	
 		farbe(126, BLUE);
-		form(126, "tlu");
-		hintergrund(126, SILVER);
+		form(126, "s");
+		hintergrund(126, BLUE);
 
 		farbe(176, BLUE);
-		form(176, "tld");
-		hintergrund(176, SILVER);
+		form(176, "s");
+		hintergrund(176, BLUE);
 	
 
 	if (aktiveStufe < 4) {
@@ -235,15 +235,15 @@ void frageHintergrund() {
 	waagrechtFarbe(5, 46, 31, BLUE);
 	waagrechtFarbe(5, 45, 31, BLUE);
 	waagrechtFarbe(5, 44, 31, BLUE);*/
-	waagrechtBeides(4, 45, 1, BLUE, "trd");
-	waagrechtBeides(36, 45, 1, BLUE, "tld");
-	hintergrund(2254, SILVER);
-	hintergrund(2204, SILVER);
+	waagrechtBeides(4, 45, 1, BLUE, "s");
+	waagrechtBeides(36, 45, 1, BLUE, "s");
+	hintergrund(2254, BLUE);
+	hintergrund(2204, BLUE);
 
-	waagrechtBeides(4, 44, 1, BLUE, "tru");
-	waagrechtBeides(36, 44, 1, BLUE, "tlu");
-	hintergrund(2236, SILVER);
-	hintergrund(2286, SILVER);
+	waagrechtBeides(4, 44, 1, BLUE, "s");
+	waagrechtBeides(36, 44, 1, BLUE, "s");
+	hintergrund(2236, BLUE);
+	hintergrund(2286, BLUE);
 	/*waagrechtFarbe(5, 43, 31, BLUE);
 	waagrechtFarbe(5, 42, 31, BLUE);
 	waagrechtFarbe(5, 41, 31, BLUE);*/
@@ -261,12 +261,12 @@ void zeichneAntwortenHintergrundA(int farbe) {
 	waagrechtFarbe(5, 35, 14, farbe);
 	waagrechtFarbe(5, 34, 14, farbe);
 	waagrechtFarbe(5, 33, 14, farbe);
-	waagrechtBeides(4, 33, 1, farbe, "trd");
-	hintergrund(1654, SILVER);
+	waagrechtBeides(4, 33, 1, farbe, "s");
+	hintergrund(1654, BLUE);
 	text(1654, "a");
 	waagrechtFarbe(5, 32, 14, farbe);
-	waagrechtBeides(4, 32, 1, farbe, "tru");
-	hintergrund(1604, SILVER);
+	waagrechtBeides(4, 32, 1, farbe, "s");
+	hintergrund(1604, BLUE);
 	waagrechtFarbe(5, 31, 14, farbe);
 	waagrechtFarbe(5, 30, 14, farbe);
 }
@@ -279,12 +279,12 @@ void zeichneAntwortenHintergrundB(int farbe) {
 	waagrechtFarbe(22, 35, 14, farbe);
 	waagrechtFarbe(22, 34, 14, farbe);
 	waagrechtFarbe(22, 33, 14, farbe);
-	waagrechtBeides(36, 33, 1, farbe, "tld");
-	hintergrund(1686, SILVER);
+	waagrechtBeides(36, 33, 1, farbe, "s");
+	hintergrund(1686, BLUE);
 	text(1686, "b");
 	waagrechtFarbe(22, 32, 14, farbe);
-	waagrechtBeides(36, 32, 1, farbe, "tlu");
-	hintergrund(1636, SILVER);
+	waagrechtBeides(36, 32, 1, farbe, "s");
+	hintergrund(1636, BLUE);
 	waagrechtFarbe(22, 31, 14, farbe);
 	waagrechtFarbe(22, 30, 14, farbe);
 }
@@ -297,12 +297,12 @@ void zeichneAntwortenHintergrundC(int farbe) {
 	waagrechtFarbe(5, 24, 14, farbe);
 	waagrechtFarbe(5, 23, 14, farbe);
 	waagrechtFarbe(5, 22, 14, farbe);
-	waagrechtBeides(4, 22, 1, farbe, "trd");
-	hintergrund(1104, SILVER);
+	waagrechtBeides(4, 22, 1, farbe, "s");
+	hintergrund(1104, BLUE);
 	text(1104, "c");
 	waagrechtFarbe(5, 21, 14, farbe);
-	waagrechtBeides(4, 21, 1, farbe, "tru");
-	hintergrund(1054, SILVER);
+	waagrechtBeides(4, 21, 1, farbe, "s");
+	hintergrund(1054, BLUE);
 	waagrechtFarbe(5, 20, 14, farbe);
 	waagrechtFarbe(5, 19, 14, farbe);
 }
@@ -315,12 +315,12 @@ void zeichneAntwortenHintergrundD(int farbe) {
 	waagrechtFarbe(22, 24, 14, farbe);
 	waagrechtFarbe(22, 23, 14, farbe);
 	waagrechtFarbe(22, 22, 14, farbe);
-	waagrechtBeides(36, 22, 1, farbe, "tld");
-	hintergrund(1136, SILVER);
+	waagrechtBeides(36, 22, 1, farbe, "s");
+	hintergrund(1136, BLUE);
 	text(1136, "d");
 	waagrechtFarbe(22, 21, 14, farbe);
-	waagrechtBeides(36, 21, 1, farbe, "tlu");
-	hintergrund(1086, SILVER);
+	waagrechtBeides(36, 21, 1, farbe, "s");
+	hintergrund(1086, BLUE);
 	waagrechtFarbe(22, 20, 14, farbe);
 	waagrechtFarbe(22, 19, 14, farbe);
 }

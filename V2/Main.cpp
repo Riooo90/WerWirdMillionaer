@@ -66,7 +66,7 @@ void bekommeKlickPosition() {
 
 void main()
 {
-	int aktiveStufe = 13; //globale Variable für die Fragen zum auslesen	
+	int aktiveStufe = 0; //globale Variable für die Fragen zum auslesen	
 	bereiteSpielfeldVor(aktiveStufe);
 	int spielende = 0;
 	/*Zeichne das Spielfeld
