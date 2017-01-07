@@ -6,7 +6,7 @@
 #define MEDIUMBLUE 	0x0000CD	 		
 #define BLUE 	0x0000FF	 		
 #define DARKGREEN 	0x006400	 		
-#define GREEN 	0x008000	 		
+#define LIMEGREEN 	0x008000	 		
 #define TEAL 	0x008080	 		
 #define DARKCYAN 	0x008B8B	 		
 #define DEEPSKYBLUE 	0x00BFFF	 		
@@ -110,7 +110,7 @@
 #define LINEN 	0xFAF0E6	 		
 #define LIGHTGOLDENRODYELLOW 	0xFAFAD2	 		
 #define OLDLACE 	0xFDF5E6	 		
-#define RED 	0xFF0000	 		
+#define CRIMSON 	0xFF0000	 		
 #define FUCHSIA 	0xFF00FF	 		
 #define MAGENTA 	0xFF00FF	 		
 #define DEEPPINK 	0xFF1493	 		

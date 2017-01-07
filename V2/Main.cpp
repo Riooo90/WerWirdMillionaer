@@ -20,12 +20,11 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 	//sendMessage("image 3 4 wwm.png \n");
 
 	groesse(50, 50);
-	formen("s");
 	frageHintergrund();
-	zeichneAntwortenHintergrundA(BLUE);
-	zeichneAntwortenHintergrundB(BLUE);
-	zeichneAntwortenHintergrundC(BLUE);
-	zeichneAntwortenHintergrundD(BLUE);
+	zeichneAntwortenHintergrundA(DEEPSKYBLUE);
+	zeichneAntwortenHintergrundB(DEEPSKYBLUE);
+	zeichneAntwortenHintergrundC(DEEPSKYBLUE);
+	zeichneAntwortenHintergrundD(DEEPSKYBLUE);
 
 	zeichneFortschrittsanzeige(aktiveStufe);
 	zeichneJokerbereich();
@@ -38,7 +37,7 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 
 void main()
 {
-	int aktiveStufe = 13; //globale Variable für die Fragen zum auslesen	
+	int aktiveStufe = 0; //globale Variable für die Fragen zum Auslesen	
 	bereiteSpielfeldVor(aktiveStufe);
 	int spielende = 0;
 
