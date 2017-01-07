@@ -2,11 +2,19 @@
 
 #include "stdafx.h"
 
+
+/*
+TODO:
+Aussteigen
+Einblenden aktueller Stufe/Frage
+Gewinnsumme einblenden
+max. Gewinnsumme enden
+*/
 static int feld, ix, iy; //Positionen der Klicks
 
 //int zustand = 0; //Zustand 0 ist der Startzustand
-
-void bereiteSpielfeldVor() {
+ 
+void bereiteSpielfeldVor(int aktiveStufe) {
 	// jetzt Schriftgroesse veraendern, gilt dann fuer alle neue Texte:
 	char befehl[100];
 	sprintf_s(befehl, 100, "fontsize %d \n", 18);
@@ -28,6 +36,12 @@ void bereiteSpielfeldVor() {
 	zeichneAntwortenHintergrundB(BLUE);
 	zeichneAntwortenHintergrundC(BLUE);
 	zeichneAntwortenHintergrundD(BLUE);
+
+	zeichneFortschrittsanzeige(aktiveStufe);
+	zeichneJokerbereich();
+	frageEinlesen(aktiveStufe);
+	antwortenEinlesen(aktiveStufe);
+	resetJoker();
 
 }
 
@@ -52,37 +66,38 @@ void bekommeKlickPosition() {
 
 void main()
 {
-	bereiteSpielfeldVor();
 	int aktiveStufe = 0; //globale Variable für die Fragen zum auslesen	
+	bereiteSpielfeldVor(aktiveStufe);
 	int spielende = 0;
-	//Zeichne das Spielfeld
+	/*Zeichne das Spielfeld
 	zeichneFortschrittsanzeige(aktiveStufe);
 	zeichneJokerbereich();
 	frageEinlesen(aktiveStufe);
-	antwortenEinlesen(aktiveStufe);
+	antwortenEinlesen(aktiveStufe);*/
 
 	for (;;) {
 		//hier bekommen wir unseren Klick, bis Abfrage > 0, also etwas geklickt wurde:
 		char *a = abfragen();
 		if (strlen(a) > 0) {
-			printf("Nachricht: %s\n", a);
+			//printf("Nachricht: %s\n", a);
 			if (a[0] == '#') {
 				sscanf_s(a, "# %d %d %d", &feld, &ix, &iy);
 				//printf_s("# %i %i", ix, iy);
-				printf("%d", richtig(ix, iy, aktiveStufe));
-				switch (richtig(ix, iy, aktiveStufe)) {
-				case 1:
+				//printf("%d", pruefeKlickAktion(ix, iy, aktiveStufe));
+				switch (pruefeKlickAktion(ix, iy, aktiveStufe)) {
+				/*case 2: //Joker Telefon benutzt
+					nutzeJokerTelefon(ix, iy, aktiveStufe);
+					//nutzeJokerPublikum(ix, iy, aktiveStufe);
+					break;*/
+				case 1: //Frage richtig beantwortet
 					aktiveStufe += 1;
 					leseNaechsteFrage(ix, ix, aktiveStufe);
 					break;
-				case 0:// Null als Default 
+				case 0: //Frage falsch beantwortet
 					zeichneNeustartButton();
 					Sleep(1000);
 					spielende = 1;
 					break;
-				case 2:
-					//Joker
-					nutzeJoker5050();
 				}
 			}
 		}
@@ -91,8 +106,8 @@ void main()
 				printf("%s", "Spielende");
 				aktiveStufe = 0;
 				Sleep(1000);
-				bereiteSpielfeldVor();
-				
+				bereiteSpielfeldVor(aktiveStufe);
+				spielende = 0;
 			}
 			Sleep(100);
 		}

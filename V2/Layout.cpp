@@ -3,18 +3,35 @@
 int startShowGeldliste = 95;
 int i;
 char* GeldStufen[15] = { "50 EURO", "100 EURO", "200 EURO", "300 EURO", "500 EURO", "1000 EURO", "2000 EURO", "4000 EURO", "8000 EURO", "16000 EURO", "32000 EURO", "64000 EURO", "125000 EURO", "500000 EURO", "1 MILLION" };
-int joker5050 = 1, jokerTel = 1, jokerPublikum = 1; //Verfügbarkeit der Joker: 1=vorhanden, 0 = benutzt
+
+
+void resetAntwortenButtons() {
+	zeichneAntwortenHintergrundA(BLUE);
+	zeichneAntwortenHintergrundB(BLUE);
+	zeichneAntwortenHintergrundC(BLUE);
+	zeichneAntwortenHintergrundD(BLUE);
+}
 
 //Fortschrittsanzeige:
 void zeichneFortschrittsanzeige(int aktiveStufe) {
 	for (int i = 0; i < 15; i++) {
 		text2(45, 1 + i * 2, GeldStufen[i]);
-		if (i == aktiveStufe) {
+		if (i == aktiveStufe-1) {
 			waagrechtFarbe(43, 1 + i * 2, 5, YELLOW);
-			//farbe(startShowGeldliste + 1 + i * 2 * 50, LIGHTYELLOW);
-			//farbe(startShowGeldliste + i * 2 * 50, LIGHTYELLOW);
+			/*if (aktiveStufe == 4 || aktiveStufe == 9) {
+				farbe2(42, 1 + i * 2, GREEN);
+			}*/
 		}
-	}	senkrechtBeides(90, -1, 50, BLUE, "s");
+		if (i == 4 || i == 9) {
+			form2(42, 1 + i * 2, "*");
+			farbe2(42, 1 + i * 2, BLUE);
+			hintergrund2(42, 1 + i * 2, SILVER);
+			form2(48, 1 + i * 2, "*");
+			farbe2(48, 1 + i * 2, BLUE);
+			hintergrund2(48, 1 + i * 2, SILVER);
+		}
+	}
+	senkrechtBeides(40, 0, 50, BLUE, "s");
 }
 
 //Joker-Bereich:
@@ -52,22 +69,22 @@ void zeichneNachsteFrageKommtButton() {
 	}
 
 	//Spitzen links und rechts
-		farbe(106, BLUE);
-		form(106, "tru");
-		hintergrund(106, SILVER);
+	farbe(106, BLUE);
+	form(106, "tru");
+	hintergrund(106, SILVER);
 
-		farbe(156, BLUE);
-		form(156, "trd");
-		hintergrund(156, SILVER);
-	
-		farbe(134, BLUE);
-		form(134, "tlu");
-		hintergrund(134, SILVER);
-	
-		farbe(184, BLUE);
-		form(184, "tld");
-		hintergrund(184, SILVER);
-	
+	farbe(156, BLUE);
+	form(156, "trd");
+	hintergrund(156, SILVER);
+
+	farbe(134, BLUE);
+	form(134, "tlu");
+	hintergrund(134, SILVER);
+
+	farbe(184, BLUE);
+	form(184, "tld");
+	hintergrund(184, SILVER);
+
 }
 
 void setzeNaechsteFrageKommtText() {
@@ -118,38 +135,38 @@ void zeichneNeustartButton() {
 //Reset nachsteFrageKommtButton
 void resetNachsteFrageKommtButton() {
 
-		for (i = 57; i < 84; i++) {
-			farbe(i, SILVER);
-		}
-		for (i = 107; i < 134; i++) {
-			farbe(i, SILVER);
-		}
-		for (i = 157; i < 184; i++) {
-			farbe(i, SILVER);
-		}
-		for (i = 207; i < 234; i++) {
-			farbe(i, SILVER);
-		}
-
-		//Spitzen links und rechts
-		farbe(106, SILVER);
-		form(106, "tru");
-		hintergrund(106, SILVER);
-
-		farbe(156, SILVER);
-		form(156, "trd");
-		hintergrund(156, SILVER);
-
-		farbe(134, SILVER);
-		form(134, "tlu");
-		hintergrund(134, SILVER);
-
-		farbe(184, SILVER);
-		form(184, "tld");
-		hintergrund(184, SILVER);
-
-		text(107, " ");
+	for (i = 57; i < 84; i++) {
+		farbe(i, SILVER);
 	}
+	for (i = 107; i < 134; i++) {
+		farbe(i, SILVER);
+	}
+	for (i = 157; i < 184; i++) {
+		farbe(i, SILVER);
+	}
+	for (i = 207; i < 234; i++) {
+		farbe(i, SILVER);
+	}
+
+	//Spitzen links und rechts
+	farbe(106, SILVER);
+	form(106, "tru");
+	hintergrund(106, SILVER);
+
+	farbe(156, SILVER);
+	form(156, "trd");
+	hintergrund(156, SILVER);
+
+	farbe(134, SILVER);
+	form(134, "tlu");
+	hintergrund(134, SILVER);
+
+	farbe(184, SILVER);
+	form(184, "tld");
+	hintergrund(184, SILVER);
+
+	text(170, "");
+}
 
 
 /*Fragen Zeile*/
@@ -250,15 +267,4 @@ void zeichneAntwortenHintergrundD(int farbe) {
 
 void setzeAntworttextD(char* antwort) {
 	text2(29, 21, antwort);
-}
-
-//Joker-Funktionen
-void nutzeJoker5050() {
-
-}
-void nutzeJokerTelefon() {
-
-}
-void nutzeJokerPublikum() {
-
 }
