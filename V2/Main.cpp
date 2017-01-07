@@ -2,10 +2,20 @@
 
 #include "stdafx.h"
 
+
+/*
+TODO:
+Aussteigen
+Einblenden aktueller Stufe/Frage
+Gewinnsumme einblenden
+max. Gewinnsumme enden
+
+
+*/
 static int feld, ix, iy; //Positionen der Klicks
 
 //int zustand = 0; //Zustand 0 ist der Startzustand
-
+ 
 void bereiteSpielfeldVor(int aktiveStufe) {
 	// jetzt Schriftgroesse veraendern, gilt dann fuer alle neue Texte:
 	char befehl[100];
