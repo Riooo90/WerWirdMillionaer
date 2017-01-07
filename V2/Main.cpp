@@ -11,6 +11,7 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 	sendMessage(befehl);
 	//alle vorhandenen Texte und Farben loeschen
 	loeschen();
+	flaeche(SILVER);
 	sprintf_s(befehl, 100, "clearAllText \n");
 	sendMessage(befehl);
 
