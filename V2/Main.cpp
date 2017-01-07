@@ -9,8 +9,6 @@ Aussteigen
 Einblenden aktueller Stufe/Frage
 Gewinnsumme einblenden
 max. Gewinnsumme enden
-
-
 */
 static int feld, ix, iy; //Positionen der Klicks
 

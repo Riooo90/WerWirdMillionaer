@@ -2,8 +2,8 @@
 
 int joker5050 = 1, jokerTel = 1, jokerPublikum = 1; //Verfügbarkeit der Joker: 1=vorhanden, 0 = benutzt
 
-/*Positionen der richtigen Antworten: a = 4, 33 ; b = 36, 33; c = 4, 22; d = 36, 22
-Es gehört immer ein zweier Paar zusammen*/
+/* Positionen der richtigen Antworten: a = 4, 33 ; b = 36, 33; c = 4, 22; d = 36, 22
+Es gehört immer ein zweier Paar zusammen */
 int loesung[] = { 4, 22, 4, 33, 4, 22, 4, 22, 36, 33, 4, 22, 4, 22, 4, 22, 4, 33, 36, 33, 4, 33, 4, 33, 36, 22, 4, 22, 36, 33 };
 
 //Loesung 0 = falsch, 1 = richtig, in der main wird ausgelesen was FKR zurück gibt
@@ -18,8 +18,8 @@ char *fragen[] = { "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, d
 "Was findet man bei Autos meist in den Varianten gleichlaufend oder gegenlaeufig?",
 "Wessen Ansprueche sollen hierzulande gesetzlich neu geregelt werden?",
 "Wobei besteht die oberste Schicht oft aus dem sogenannten Fondant?",
-"Welcher Buchstabe kam in der Entstehungsgeschichte unseres heute gebraeuchlichen Alphabets erst im Mittelalter hinzu?",
-"Welche Pflanzen zaehlen zur selben Familie und sind fuer manchen Hobbygaertner zum Verwechseln aehnlich?",
+"Welcher Buchstabe kam in unserem Aplhabet erst im Mittelalter hinzu?",
+"Welche Pflanzen zaehlen zur selben Familie und sehen sich zum Verwechseln aehnlich?",
 "Womit machte sich der 2012 verstorbene Inder Ravi Shankar zur Legende?",
 "Bei welchen beiden Staaten findet man im Ländernamen wie auch im Namen der Hauptstadt keinen anderen Vokal als das A?",
 "Wer muss beim Urlaub im Schwarzwald grundsatzlich die sogenannte Zwei-Meter-Regel beachten?",
