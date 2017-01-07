@@ -17,7 +17,7 @@ void zeichneRechteck(int s, int z, int breite, int hoehe, int farbe, char* form)
 //WWM-Funktionen:
 void zeichneFortschrittsanzeige(int aktiveStufe);
 void zeichneNachsteFrageKommtButton();
-void zeichneNeustartButton();
+void zeichneNeustartButton(int aktiveStufe);
 void frageHintergrund();
 void frageText(char* frage);
 

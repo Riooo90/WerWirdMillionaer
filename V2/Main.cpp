@@ -13,7 +13,7 @@ max. Gewinnsumme enden
 static int feld, ix, iy; //Positionen der Klicks
 
 //int zustand = 0; //Zustand 0 ist der Startzustand
- 
+
 void bereiteSpielfeldVor(int aktiveStufe) {
 	// jetzt Schriftgroesse veraendern, gilt dann fuer alle neue Texte:
 	char befehl[100];
@@ -85,16 +85,21 @@ void main()
 				//printf_s("# %i %i", ix, iy);
 				//printf("%d", pruefeKlickAktion(ix, iy, aktiveStufe));
 				switch (pruefeKlickAktion(ix, iy, aktiveStufe)) {
-				/*case 2: //Joker Telefon benutzt
-					nutzeJokerTelefon(ix, iy, aktiveStufe);
-					//nutzeJokerPublikum(ix, iy, aktiveStufe);
-					break;*/
+					/*case 2: //Joker Telefon benutzt
+						nutzeJokerTelefon(ix, iy, aktiveStufe);
+						//nutzeJokerPublikum(ix, iy, aktiveStufe);
+						break;*/
 				case 1: //Frage richtig beantwortet
 					aktiveStufe += 1;
-					leseNaechsteFrage(ix, ix, aktiveStufe);
+					if (aktiveStufe < 15) {
+						leseNaechsteFrage(ix, ix, aktiveStufe);
+					}
+					else {
+						zeichneNeustartButton(aktiveStufe);
+					}
 					break;
 				case 0: //Frage falsch beantwortet
-					zeichneNeustartButton();
+					zeichneNeustartButton(aktiveStufe);
 					Sleep(1000);
 					spielende = 1;
 					break;
@@ -109,7 +114,7 @@ void main()
 				bereiteSpielfeldVor(aktiveStufe);
 				spielende = 0;
 			}
-			Sleep(100);
+			Sleep(1000);
 		}
 	}
 	getchar();

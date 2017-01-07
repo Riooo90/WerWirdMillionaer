@@ -91,47 +91,6 @@ void setzeNaechsteFrageKommtText() {
 	text(170, "Super gemacht! Die naechste Frage kommt!");
 }
 
-/*Neustart Button*/
-void zeichneNeustartButton() {
-	printf("%s", "zeichne Neustart");
-	for (i = 67; i < 74; i++) {
-		farbe(i, BLUE);
-	}
-	for (i = 117; i < 124; i++) {
-		farbe(i, BLUE);
-	}
-	for (i = 167; i < 174; i++) {
-		farbe(i, BLUE);
-	}
-	for (i = 217; i < 224; i++) {
-		farbe(i, BLUE);
-	}
-
-	text(170, "Neustart");
-
-	//Spitzen links und rechts
-	for (i = 116; i < 117; i++) {
-		farbe(i, BLUE);
-		form(i, "tru");
-		hintergrund(i, SILVER);
-	}
-	for (i = 166; i < 167; i++) {
-		farbe(i, BLUE);
-		form(i, "trd");
-		hintergrund(i, SILVER);
-	}
-	for (i = 124; i < 125; i++) {
-		farbe(i, BLUE);
-		form(i, "tlu");
-		hintergrund(i, SILVER);
-	}
-	for (i = 174; i < 175; i++) {
-		farbe(i, BLUE);
-		form(i, "tld");
-		hintergrund(i, SILVER);
-	}
-}
-
 //Reset nachsteFrageKommtButton
 void resetNachsteFrageKommtButton() {
 
@@ -166,6 +125,105 @@ void resetNachsteFrageKommtButton() {
 	hintergrund(184, SILVER);
 
 	text(170, "");
+}
+
+/*Neustart Button*/
+void zeichneNeustartButton(int aktiveStufe) {
+	printf("%s", "zeichne Neustart");
+	for (i = 65; i < 76; i++) {
+		farbe(i, BLUE);
+	}
+	for (i = 115; i < 126; i++) {
+		farbe(i, BLUE);
+	}
+	for (i = 165; i < 176; i++) {
+		farbe(i, BLUE);
+	}
+	for (i = 215; i < 226; i++) {
+		farbe(i, BLUE);
+	}
+
+	text(170, "Das Spiel wird neu gestartet");
+
+	//Spitzen links und rechts
+		farbe(114, BLUE);
+		form(114, "tru");
+		hintergrund(114, SILVER);
+	
+		farbe(164, BLUE);
+		form(164, "trd");
+		hintergrund(164, SILVER);
+	
+		farbe(126, BLUE);
+		form(126, "tlu");
+		hintergrund(126, SILVER);
+
+		farbe(176, BLUE);
+		form(176, "tld");
+		hintergrund(176, SILVER);
+	
+
+	if (aktiveStufe < 4) {
+		for (i = 415; i < 426; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 465; i < 476; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 515; i < 526; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 565; i < 576; i++) {
+			farbe(i, GREEN);
+		}
+		text(470, "Du hast 0 Euro gewonnen");
+	}
+	else if (aktiveStufe < 9) {
+		for (i = 415; i < 426; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 465; i < 476; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 515; i < 526; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 565; i < 576; i++) {
+			farbe(i, GREEN);
+		}
+		text(170, "Du hast 500 Euro gewonnen");
+	}
+
+	else if (aktiveStufe < 15) {
+		for (i = 415; i < 426; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 465; i < 476; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 515; i < 526; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 565; i < 576; i++) {
+			farbe(i, GREEN);
+		}
+		text(470, "Du hast 16000 Euro gewonnen");
+	}
+	else {
+		for (i = 415; i < 426; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 465; i < 476; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 515; i < 526; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 565; i < 576; i++) {
+			farbe(i, GREEN);
+		}
+		text(470, "Du hast 1 Mio Euro gewonnen");
+	}
 }
 
 
