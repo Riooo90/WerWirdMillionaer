@@ -60,90 +60,96 @@ void antwortenEinlesen(int aktiveStufe) {
 
 /* Vergleicht die Texte aus den KLicks, an der Stelle Stufe, ix und iy kommen vom KLick, aktive Stufe übergeben, da abhängig davon, nicht in der fkt als for drin! */
 int pruefeKlickAktion(int ix, int iy, int aktiveStufe) {
-	//BEGINN ----- Jokerbutton-Klicks abfragen:
-	if (ix == 43 && iy == 37 && joker5050 == 1) { //50:50-JOKER
-		int counter = 0;
-		ix = loesung[aktiveStufe * 2];
-		iy = loesung[(aktiveStufe * 2) + 1];
-
-		if (ix == 4 && iy == 33) {
-			setzeAntworttextB("");
-			setzeAntworttextD("");
-		}
-		else if (ix == 36 && iy == 33) {
-			setzeAntworttextA("");
-			setzeAntworttextD("");
-		}
-		else if (ix == 4 && iy == 22) {
-			setzeAntworttextA("");
-			setzeAntworttextB("");
-		}
-		else if (ix == 36 && iy == 22) {
-			setzeAntworttextA("");
-			setzeAntworttextB("");
-		}
-
-		joker5050 = 0;
-		farbe2(43, 37, RED);
+	if (ix == 20 && iy == 11) {
+		return 3;
 	}
 	else {
-		if (ix == 43 && iy == 39 && jokerTel == 1) { //TELEFONJOKER
-			ix = loesung[aktiveStufe * 2];
-			iy = loesung[(aktiveStufe * 2) + 1];
-			jokerTel = 0;
-			farbe2(43, 39, RED);
-		}
-		else if (ix == 43 && iy == 41 && jokerPublikum == 1) { //PUBLIKUMSJOKER
-			ix = loesung[aktiveStufe * 2];
-			iy = loesung[(aktiveStufe * 2) + 1];
-			jokerPublikum = 0;
-			farbe2(43, 41, RED);
-		}
-		//ENDE ----- Jokerbutton-Klicks abfragen
 
-		if (ix == loesung[aktiveStufe * 2] && iy == loesung[(aktiveStufe * 2) + 1]) {	//mal zwei weil ein zweierpaar zusammen gehört für das loesungsarray
+		//BEGINN ----- Jokerbutton-Klicks abfragen:
+		if (ix == 43 && iy == 37 && joker5050 == 1) { //50:50-JOKER
+			int counter = 0;
+			ix = loesung[aktiveStufe * 2];
+			iy = loesung[(aktiveStufe * 2) + 1];
+
 			if (ix == 4 && iy == 33) {
-				zeichneAntwortenHintergrundA(GREEN);
-				zeichneNachsteFrageKommtButton();
-				setzeNaechsteFrageKommtText();
-				return 1;
+				setzeAntworttextB("");
+				setzeAntworttextD("");
 			}
-			if (ix == 36 && iy == 33) {
-				zeichneAntwortenHintergrundB(GREEN);
-				zeichneNachsteFrageKommtButton();
-				setzeNaechsteFrageKommtText();
-				return 1;
+			else if (ix == 36 && iy == 33) {
+				setzeAntworttextA("");
+				setzeAntworttextD("");
 			}
-			if (ix == 4 && iy == 22) {
-				zeichneAntwortenHintergrundC(GREEN);
-				zeichneNachsteFrageKommtButton();
-				setzeNaechsteFrageKommtText();
-				//printf("%s", antwort);
-				return 1;
+			else if (ix == 4 && iy == 22) {
+				setzeAntworttextA("");
+				setzeAntworttextB("");
 			}
-			if (ix == 36, iy == 22) {
-				zeichneAntwortenHintergrundD(GREEN);
-				zeichneNachsteFrageKommtButton();
-				setzeNaechsteFrageKommtText();
-				return 1;
+			else if (ix == 36 && iy == 22) {
+				setzeAntworttextA("");
+				setzeAntworttextB("");
 			}
+
+			joker5050 = 0;
+			farbe2(43, 37, RED);
 		}
 		else {
-			if (ix == 4 && iy == 33) {
-				zeichneAntwortenHintergrundA(RED);
-				return 0;
+			if (ix == 43 && iy == 39 && jokerTel == 1) { //TELEFONJOKER
+				ix = loesung[aktiveStufe * 2];
+				iy = loesung[(aktiveStufe * 2) + 1];
+				jokerTel = 0;
+				farbe2(43, 39, RED);
 			}
-			if (ix == 36 && iy == 33) {
-				zeichneAntwortenHintergrundB(RED);
-				return 0;
+			else if (ix == 43 && iy == 41 && jokerPublikum == 1) { //PUBLIKUMSJOKER
+				ix = loesung[aktiveStufe * 2];
+				iy = loesung[(aktiveStufe * 2) + 1];
+				jokerPublikum = 0;
+				farbe2(43, 41, RED);
 			}
-			if (ix == 4 && iy == 22) {
-				zeichneAntwortenHintergrundC(RED);
-				return 0;
+			//ENDE ----- Jokerbutton-Klicks abfragen
+
+			if (ix == loesung[aktiveStufe * 2] && iy == loesung[(aktiveStufe * 2) + 1]) {	//mal zwei weil ein zweierpaar zusammen gehört für das loesungsarray
+				if (ix == 4 && iy == 33) {
+					zeichneAntwortenHintergrundA(GREEN);
+					zeichneNachsteFrageKommtButton();
+					setzeNaechsteFrageKommtText();
+					return 1;
+				}
+				if (ix == 36 && iy == 33) {
+					zeichneAntwortenHintergrundB(GREEN);
+					zeichneNachsteFrageKommtButton();
+					setzeNaechsteFrageKommtText();
+					return 1;
+				}
+				if (ix == 4 && iy == 22) {
+					zeichneAntwortenHintergrundC(GREEN);
+					zeichneNachsteFrageKommtButton();
+					setzeNaechsteFrageKommtText();
+					//printf("%s", antwort);
+					return 1;
+				}
+				if (ix == 36, iy == 22) {
+					zeichneAntwortenHintergrundD(GREEN);
+					zeichneNachsteFrageKommtButton();
+					setzeNaechsteFrageKommtText();
+					return 1;
+				}
 			}
-			if (ix == 36 && iy == 22) {
-				zeichneAntwortenHintergrundD(RED);
-				return 0;
+			else {
+				if (ix == 4 && iy == 33) {
+					zeichneAntwortenHintergrundA(RED);
+					return 0;
+				}
+				if (ix == 36 && iy == 33) {
+					zeichneAntwortenHintergrundB(RED);
+					return 0;
+				}
+				if (ix == 4 && iy == 22) {
+					zeichneAntwortenHintergrundC(RED);
+					return 0;
+				}
+				if (ix == 36 && iy == 22) {
+					zeichneAntwortenHintergrundD(RED);
+					return 0;
+				}
 			}
 		}
 	}
@@ -164,22 +170,3 @@ void resetJoker() {
 	jokerPublikum = 1;
 	jokerTel = 1;
 }
-
-/*Joker-Funktionen
-void nutzeJoker5050() {
-	printf("%s", "Joker 5050 benutzt!");
-}
-int nutzeJokerTelefon(int ix, int iy, int aktiveStufe) {
-	ix = loesung[aktiveStufe * 2];
-	iy = loesung[(aktiveStufe * 2) + 1];
-	jokerTel = 0;
-	farbe2(43, 39, RED);
-	return pruefeKlickAktion(ix, iy, aktiveStufe);
-}
-void nutzeJokerPublikum(int ix, int iy, int aktiveStufe) {
-	ix = loesung[aktiveStufe * 2];
-	iy = loesung[(aktiveStufe * 2) + 1];
-	jokerPublikum = 0;
-	farbe2(43, 41, RED);
-	//return pruefeKlickAktion(ix, iy, aktiveStufe);
-}*/

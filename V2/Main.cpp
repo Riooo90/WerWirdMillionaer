@@ -42,6 +42,7 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 	frageEinlesen(aktiveStufe);
 	antwortenEinlesen(aktiveStufe);
 	resetJoker();
+	zeichneAbbruchButton();
 
 }
 
@@ -66,7 +67,7 @@ void bekommeKlickPosition() {
 
 void main()
 {
-	int aktiveStufe = 0; //globale Variable für die Fragen zum auslesen	
+	int aktiveStufe = 13; //globale Variable für die Fragen zum auslesen	
 	bereiteSpielfeldVor(aktiveStufe);
 	int spielende = 0;
 	/*Zeichne das Spielfeld
@@ -85,10 +86,11 @@ void main()
 				//printf_s("# %i %i", ix, iy);
 				//printf("%d", pruefeKlickAktion(ix, iy, aktiveStufe));
 				switch (pruefeKlickAktion(ix, iy, aktiveStufe)) {
-					/*case 2: //Joker Telefon benutzt
-						nutzeJokerTelefon(ix, iy, aktiveStufe);
-						//nutzeJokerPublikum(ix, iy, aktiveStufe);
-						break;*/
+				case 3:
+					gebeAbbruchSummeAus(aktiveStufe);
+					spielende = 1;
+					Sleep(10000);
+					break;
 				case 1: //Frage richtig beantwortet
 					aktiveStufe += 1;
 					if (aktiveStufe < 15) {
@@ -97,7 +99,7 @@ void main()
 					else {
 						zeichneNeustartButton(aktiveStufe);
 						spielende = 1;
-						Sleep(1000);
+						Sleep(10000);
 					}
 					break;
 				case 0: //Frage falsch beantwortet
@@ -116,7 +118,7 @@ void main()
 				bereiteSpielfeldVor(aktiveStufe);
 				spielende = 0;
 			}
-			Sleep(1000);
+			Sleep(100);
 		}
 	}
 	getchar();

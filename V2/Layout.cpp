@@ -227,6 +227,33 @@ void zeichneNeustartButton(int aktiveStufe) {
 	}
 }
 
+void zeichneAbbruchButton() {
+		for (i = 415; i < 426; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 465; i < 476; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 515; i < 526; i++) {
+			farbe(i, GREEN);
+		}
+		for (i = 565; i < 576; i++) {
+			farbe(i, GREEN);
+		}
+		form(570, "c");
+		farbe(570, RED);
+		hintergrund(570, GREEN);
+		text(470, "Aussteigen");	
+}
+
+void gebeAbbruchSummeAus(int aktiveStufe) {
+	form(570, "s");
+	farbe(570, GREEN);
+	text(470, "");
+	text(467, "Gewinnsumme:");
+	text(472, GeldStufen[aktiveStufe]);
+
+}
 
 /*Fragen Zeile*/
 void frageHintergrund() {

@@ -47,6 +47,8 @@ void resetAntwortenButtons();
 int nutzeJokerTelefon(int ix, int iy, int aktiveStufe);
 void nutzeJokerPublikum(int ix, int iy, int aktiveStufe);*/
 void resetJoker();
+void zeichneAbbruchButton();
+void gebeAbbruchSummeAus(int aktiveStufe);
 
 //grundlegende BOS-Funktionen
 void groesse(int x, int y);
