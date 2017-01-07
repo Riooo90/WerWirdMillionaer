@@ -12,20 +12,18 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 	//alle vorhandenen Texte und Farben loeschen
 	loeschen();
 	flaeche(SILVER);
+	formen("none");
 	sprintf_s(befehl, 100, "clearAllText \n");
 	sendMessage(befehl);
-
-	// Test mit Bild (Bild-Datei wird relativ zum jserver-Verzeichnis gesucht)
-	//form2(3, 4, "none");
-	//symbolGroesse2(3, 4, 3.0);
-	//sendMessage("image 3 4 wwm.png \n");
-
+	
 	groesse(50, 50);
 	frageHintergrund();
-	zeichneAntwortenHintergrundA(DEEPSKYBLUE);
-	zeichneAntwortenHintergrundB(DEEPSKYBLUE);
-	zeichneAntwortenHintergrundC(DEEPSKYBLUE);
-	zeichneAntwortenHintergrundD(DEEPSKYBLUE);
+	resetAntwortenButtons();
+
+	// Test mit Bild (Bild-Datei wird relativ zum jserver-Verzeichnis gesucht)
+	form2(45, 46, "none");
+	symbolGroesse2(45, 46, 3.0);
+	sendMessage("image 45 46 wwm.png \n");
 
 	zeichneFortschrittsanzeige(aktiveStufe);
 	zeichneJokerbereich();
