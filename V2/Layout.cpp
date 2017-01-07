@@ -1,10 +1,8 @@
 #include "stdafx.h"
 /* grundlegende Variablen um das Layout zu definieren:  */
-int startShowGeldliste = 95;
 int i;
 char* GeldStufen[15] = { "50 EURO", "100 EURO", "200 EURO", "300 EURO", "500 EURO", "1000 EURO", "2000 EURO", "4000 EURO", "8000 EURO", "16000 EURO", "32000 EURO", "64000 EURO", "125000 EURO", "500000 EURO", "1 MILLION" };
 char* GeldStufenFrage[15] = { "50 EURO - Frage", "100 EURO - Frage", "200 EURO - Frage", "300 EURO - Frage", "500 EURO - Frage", "1000 EURO - Frage", "2000 EURO - Frage", "4000 EURO - Frage", "8000 EURO - Frage", "16000 EURO - Frage", "32000 EURO - Frage", "64000 EURO - Frage", "125000 EURO - Frage", "500000 EURO - Frage", "1 MILLIONEN EURO - Frage" };
-
 
 void resetAntwortenButtons() {
 	zeichneAntwortenHintergrundA(DEEPSKYBLUE);
@@ -32,6 +30,12 @@ void zeichneFortschrittsanzeige(int aktiveStufe) {
 	senkrechtBeides(40, 0, 50, DEEPSKYBLUE, "s");
 }
 
+void zeichneSpitzen(int pos, char* formS, int farbeS) {
+	farbe(pos, farbeS);
+	form(pos, formS);
+	hintergrund(pos, farbeS);
+}
+
 //Joker-Bereich:
 void zeichneJokerbereich() {
 	form(1893, "c");
@@ -52,35 +56,21 @@ void zeichneJokerbereich() {
 
 //Super, die naechste Frage kommt
 void zeichneNachsteFrageKommtButton() {
-
+	
 	waagrechtForm(7, 1, 27, "s");
 	waagrechtFarbe(7, 1, 27, DEEPSKYBLUE);
-
 	waagrechtForm(7, 2, 27, "s");
 	waagrechtFarbe(7, 2, 27, DEEPSKYBLUE);
-
 	waagrechtForm(7, 3, 27, "s");
 	waagrechtFarbe(7, 3, 27, DEEPSKYBLUE);
-
 	waagrechtForm(7, 4, 27, "s");
 	waagrechtFarbe(7, 4, 27, DEEPSKYBLUE);
 
 	//Spitzen links und rechts
-	farbe(106, DEEPSKYBLUE);
-	form(106, "s");
-	hintergrund(106, DEEPSKYBLUE);
-
-	farbe(156, DEEPSKYBLUE);
-	form(156, "s");
-	hintergrund(156, DEEPSKYBLUE);
-
-	farbe(134, DEEPSKYBLUE);
-	form(134, "s");
-	hintergrund(134, DEEPSKYBLUE);
-
-	farbe(184, DEEPSKYBLUE);
-	form(184, "s");
-	hintergrund(184, DEEPSKYBLUE);
+	zeichneSpitzen(106, "s", DEEPSKYBLUE);
+	zeichneSpitzen(156, "s", DEEPSKYBLUE);
+	zeichneSpitzen(134, "s", DEEPSKYBLUE);
+	zeichneSpitzen(184, "s", DEEPSKYBLUE);
 }
 
 void setzeNaechsteFrageKommtText() {
@@ -103,123 +93,61 @@ void resetNachsteFrageKommtButton() {
 	waagrechtFarbe(7, 4, 27, SILVER);
 
 	//Spitzen links und rechts
-	farbe(106, SILVER);
-	form(106, "s");
-	hintergrund(106, SILVER);
-
-	farbe(156, SILVER);
-	form(156, "s");
-	hintergrund(156, SILVER);
-
-	farbe(134, SILVER);
-	form(134, "s");
-	hintergrund(134, SILVER);
-
-	farbe(184, SILVER);
-	form(184, "s");
-	hintergrund(184, SILVER);
+	zeichneSpitzen(106, "s", SILVER);
+	zeichneSpitzen(156, "s", SILVER);
+	zeichneSpitzen(134, "s", SILVER);
+	zeichneSpitzen(184, "s", SILVER);
 
 	text(170, "");
 }
 
-/*Neustart Button*/
-void zeichneNeustartButton(int aktiveStufe) {
-	
-
+void mittelButtonHintergrund() {
 	waagrechtBeides(14, 8, 13, BLUE, "s");
 	waagrechtBeides(14, 9, 13, BLUE, "s");
 	waagrechtBeides(14, 10, 13, BLUE, "s");
 	waagrechtBeides(14, 11, 13, BLUE, "s");
-
+}
+/*Neustart Button*/
+void zeichneNeustartButton(int aktiveStufe) {
+	mittelButtonHintergrund();
 	text(170, "Das Spiel wird neu gestartet");
 
 	//Spitzen links und rechts
-	farbe(113, DEEPSKYBLUE);
-	form(113, "s");
-	hintergrund(113, DEEPSKYBLUE);
+	zeichneSpitzen(113, "s", DEEPSKYBLUE);
+	zeichneSpitzen(163, "s", DEEPSKYBLUE);
+	zeichneSpitzen(126, "s", DEEPSKYBLUE);
+	zeichneSpitzen(176, "s", DEEPSKYBLUE);
 
-	farbe(163, DEEPSKYBLUE);
-	form(163, "s");
-	hintergrund(164, DEEPSKYBLUE);
-
-	farbe(126, DEEPSKYBLUE);
-	form(126, "s");
-	hintergrund(126, DEEPSKYBLUE);
-
-	farbe(176, DEEPSKYBLUE);
-	form(176, "s");
-	hintergrund(176, DEEPSKYBLUE);
-
-
+	//Block für Geldbetrag:
+	for (i = 414; i < 427; i++) {
+		farbe(i, LIMEGREEN);
+	}
+	for (i = 464; i < 477; i++) {
+		farbe(i, LIMEGREEN);
+	}
+	for (i = 514; i < 527; i++) {
+		farbe(i, LIMEGREEN);
+	}
+	for (i = 564; i < 577; i++) {
+		farbe(i, LIMEGREEN);
+	}
 	if (aktiveStufe < 4) {
-		for (i = 414; i < 427; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 464; i < 477; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 514; i < 527; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 564; i < 577; i++) {
-			farbe(i, LIMEGREEN);
-		}
 		text(470, "Du hast 0 Euro gewonnen");
 	}
 	else if (aktiveStufe < 9) {
-		for (i = 414; i < 427; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 464; i < 477; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 514; i < 527; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 564; i < 577; i++) {
-			farbe(i, LIMEGREEN);
-		}
 		text(170, "Du hast 500 Euro gewonnen");
 	}
 
 	else if (aktiveStufe < 14) {
-		for (i = 414; i < 427; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 464; i < 477; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 514; i < 527; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 564; i < 577; i++) {
-			farbe(i, LIMEGREEN);
-		}
 		text(470, "Du hast 16000 Euro gewonnen");
 	}
 	else {
-		for (i = 414; i < 427; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 464; i < 477; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 514; i < 527; i++) {
-			farbe(i, LIMEGREEN);
-		}
-		for (i = 564; i < 577; i++) {
-			farbe(i, LIMEGREEN);
-		}
 		text(470, "Du hast 1 Mio Euro gewonnen");
 	}
 }
 
 void zeichneAbbruchButton() {
-	waagrechtBeides(14, 8, 13, BLUE, "s");
-	waagrechtBeides(14, 9, 13, BLUE, "s");
-	waagrechtBeides(14, 10, 13, BLUE, "s");
-	waagrechtBeides(14, 11, 13, BLUE, "s");
-
+	mittelButtonHintergrund();
 	form(570, "c");
 	farbe(570, DEEPSKYBLUE);
 	hintergrund(570, BLUE);
@@ -231,8 +159,12 @@ void gebeAbbruchSummeAus(int aktiveStufe) {
 	farbe(570, LIMEGREEN);
 	text(470, "");
 	text(467, "Gewinnsumme:");
-	text(472, GeldStufen[aktiveStufe]);
-
+	if (aktiveStufe > 0) {
+		text(472, GeldStufen[aktiveStufe - 1]);
+	}
+	else {
+		text(472, "0 EURO");
+	}
 }
 
 /*Fragen Zeile*/
@@ -271,7 +203,7 @@ void zeichneAntwortenHintergrundA(int farbe) {
 	hintergrund2(19, 33, farbe);
 	waagrechtBeides(5, 31, 14, farbe, "s");
 	waagrechtBeides(5, 30, 14, farbe, "s");
-	
+
 }
 
 void setzeAntworttextA(char* antwort) {

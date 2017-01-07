@@ -14,24 +14,22 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 	flaeche(SILVER);
 	formen("none");
 	sprintf_s(befehl, 100, "clearAllText \n");
-	sendMessage(befehl);
-	
-	groesse(50, 50);
-	frageHintergrund();
-	resetAntwortenButtons();
+	sendMessage(befehl);	
 
 	// Test mit Bild (Bild-Datei wird relativ zum jserver-Verzeichnis gesucht)
 	form2(45, 46, "none");
 	symbolGroesse2(45, 46, 3.0);
 	sendMessage("image 45 46 wwm.png \n");
 
+	groesse(50, 50);
+	frageHintergrund();
+	resetAntwortenButtons();
 	zeichneFortschrittsanzeige(aktiveStufe);
 	zeichneJokerbereich();
 	frageEinlesen(aktiveStufe);
 	antwortenEinlesen(aktiveStufe);
 	resetJoker();
 	zeichneAbbruchButton();
-
 }
 
 void main()

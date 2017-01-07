@@ -45,9 +45,6 @@ void resetAntwortenButtons();
 
 void zeichneJokerbereich();
 
-/*void nutzeJoker5050();
-int nutzeJokerTelefon(int ix, int iy, int aktiveStufe);
-void nutzeJokerPublikum(int ix, int iy, int aktiveStufe);*/
 void resetJoker();
 void zeichneAbbruchButton();
 void gebeAbbruchSummeAus(int aktiveStufe);
