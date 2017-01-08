@@ -1,2 +1,0 @@
-# WerWirdMillionaer
-wwm
