@@ -101,43 +101,27 @@ void resetNachsteFrageKommtButton() {
 	text(170, "");
 }
 
-void mittelButtonHintergrund() {
-	waagrechtBeides(14, 8, 13, BLUE, "s");
-	waagrechtBeides(14, 9, 13, BLUE, "s");
-	waagrechtBeides(14, 10, 13, BLUE, "s");
-	waagrechtBeides(14, 11, 13, BLUE, "s");
-}
 /*Neustart Button*/
 void zeichneNeustartButton(int aktiveStufe) {
-	mittelButtonHintergrund();
+
+	zeichneRechteck(14, 1, 13, 4, DEEPSKYBLUE, "s");
 	text(170, "Das Spiel wird neu gestartet");
 
 	//Spitzen links und rechts
 	zeichneSpitzen(113, "s", DEEPSKYBLUE);
 	zeichneSpitzen(163, "s", DEEPSKYBLUE);
-	zeichneSpitzen(126, "s", DEEPSKYBLUE);
-	zeichneSpitzen(176, "s", DEEPSKYBLUE);
+	zeichneSpitzen(127, "s", DEEPSKYBLUE);
+	zeichneSpitzen(177, "s", DEEPSKYBLUE);
 
 	//Block für Geldbetrag:
-	for (i = 414; i < 427; i++) {
-		farbe(i, LIMEGREEN);
-	}
-	for (i = 464; i < 477; i++) {
-		farbe(i, LIMEGREEN);
-	}
-	for (i = 514; i < 527; i++) {
-		farbe(i, LIMEGREEN);
-	}
-	for (i = 564; i < 577; i++) {
-		farbe(i, LIMEGREEN);
-	}
+	zeichneRechteck(14, 8, 13, 4, LIMEGREEN, "s");
+
 	if (aktiveStufe < 4) {
 		text(470, "Du hast 0 Euro gewonnen");
 	}
 	else if (aktiveStufe < 9) {
 		text(170, "Du hast 500 Euro gewonnen");
 	}
-
 	else if (aktiveStufe < 14) {
 		text(470, "Du hast 16000 Euro gewonnen");
 	}
@@ -147,7 +131,7 @@ void zeichneNeustartButton(int aktiveStufe) {
 }
 
 void zeichneAbbruchButton() {
-	mittelButtonHintergrund();
+	zeichneRechteck(14, 8, 13, 4, BLUE, "s");
 	form(570, "c");
 	farbe(570, DEEPSKYBLUE);
 	hintergrund(570, BLUE);
@@ -169,15 +153,10 @@ void gebeAbbruchSummeAus(int aktiveStufe) {
 
 /*Fragen Zeile*/
 void frageHintergrund() {
-	waagrechtBeides(4, 45, 1, DEEPSKYBLUE, "s");
-	waagrechtBeides(36, 45, 1, DEEPSKYBLUE, "s");
-	hintergrund(2254, DEEPSKYBLUE);
-	hintergrund(2204, DEEPSKYBLUE);
-
-	waagrechtBeides(4, 44, 1, DEEPSKYBLUE, "s");
-	waagrechtBeides(36, 44, 1, DEEPSKYBLUE, "s");
-	hintergrund(2236, DEEPSKYBLUE);
-	hintergrund(2286, DEEPSKYBLUE);
+	zeichneSpitzen(2254, "s", DEEPSKYBLUE);
+	zeichneSpitzen(2204, "s", DEEPSKYBLUE);
+	zeichneSpitzen(2236, "s", DEEPSKYBLUE);
+	zeichneSpitzen(2286, "s", DEEPSKYBLUE);
 	zeichneRechteck(5, 41, 31, 8, DEEPSKYBLUE, "s");
 }
 
@@ -188,22 +167,12 @@ void frageText(char* frage, int aktiveStufe) {
 
 /*Antwort Zeilen, farbe als Parameter, da die Farbe variabel ist*/
 void zeichneAntwortenHintergrundA(int farbe) {
-	waagrechtBeides(5, 35, 14, farbe, "s");
-	waagrechtBeides(5, 34, 14, farbe, "s");
-	waagrechtBeides(5, 33, 14, farbe, "s");
-	waagrechtBeides(4, 33, 1, farbe, "s");
-	hintergrund(1654, farbe);
-	waagrechtBeides(19, 32, 1, farbe, "s");
-	hintergrund2(19, 32, farbe);
-	text(1654, "a");
-	waagrechtBeides(5, 32, 14, farbe, "s");
-	waagrechtBeides(4, 32, 1, farbe, "s");
-	hintergrund(1604, farbe);
-	waagrechtBeides(19, 33, 1, farbe, "s");
-	hintergrund2(19, 33, farbe);
-	waagrechtBeides(5, 31, 14, farbe, "s");
-	waagrechtBeides(5, 30, 14, farbe, "s");
-
+	zeichneRechteck(5, 30, 14, 6, farbe, "s");
+	zeichneSpitzen(1604, "s", farbe);
+	zeichneSpitzen(1654, "s", farbe);
+	zeichneSpitzen(1669, "s", farbe);
+	zeichneSpitzen(1619, "s", farbe);
+	text(1654, "A");
 }
 
 void setzeAntworttextA(char* antwort) {
@@ -211,21 +180,12 @@ void setzeAntworttextA(char* antwort) {
 }
 
 void zeichneAntwortenHintergrundB(int farbe) {
-	waagrechtBeides(22, 35, 14, farbe, "s");
-	waagrechtBeides(22, 34, 14, farbe, "s");
-	waagrechtBeides(22, 33, 14, farbe, "s");
-	waagrechtBeides(36, 33, 1, farbe, "s");
-	hintergrund(1686, farbe);
-	waagrechtBeides(21, 32, 1, farbe, "s");
-	hintergrund2(21, 32, farbe);
-	text(1686, "b");
-	waagrechtBeides(22, 32, 14, farbe, "s");
-	waagrechtBeides(36, 32, 1, farbe, "s");
-	hintergrund(1636, farbe);
-	waagrechtBeides(21, 33, 1, farbe, "s");
-	hintergrund2(21, 33, farbe);
-	waagrechtBeides(22, 31, 14, farbe, "s");
-	waagrechtBeides(22, 30, 14, farbe, "s");
+	zeichneRechteck(22, 30, 14, 6, farbe, "s");
+	zeichneSpitzen(1621, "s", farbe);
+	zeichneSpitzen(1671, "s", farbe);
+	zeichneSpitzen(1686, "s", farbe);
+	zeichneSpitzen(1636, "s", farbe);
+	text(1686, "B");
 }
 
 void setzeAntworttextB(char* antwort) {
@@ -233,21 +193,12 @@ void setzeAntworttextB(char* antwort) {
 }
 
 void zeichneAntwortenHintergrundC(int farbe) {
-	waagrechtBeides(5, 24, 14, farbe, "s");
-	waagrechtBeides(5, 23, 14, farbe, "s");
-	waagrechtBeides(5, 22, 14, farbe, "s");
-	waagrechtBeides(4, 22, 1, farbe, "s");
-	hintergrund(1104, farbe);
-	waagrechtBeides(19, 21, 1, farbe, "s");
-	hintergrund2(19, 21, farbe);
-	text(1104, "c");
-	waagrechtBeides(5, 21, 14, farbe, "s");
-	waagrechtBeides(4, 21, 1, farbe, "s");
-	hintergrund(1054, farbe);
-	waagrechtBeides(19, 22, 1, farbe, "s");
-	hintergrund2(19, 22, farbe);
-	waagrechtBeides(5, 20, 14, farbe, "s");
-	waagrechtBeides(5, 19, 14, farbe, "s");
+	zeichneRechteck(5, 19, 14, 6, farbe, "s");
+	zeichneSpitzen(1054, "s", farbe);
+	zeichneSpitzen(1104, "s", farbe);
+	zeichneSpitzen(1069, "s", farbe);
+	zeichneSpitzen(1119, "s", farbe);
+	text(1104, "C");
 }
 
 void setzeAntworttextC(char* antwort) {
@@ -255,21 +206,12 @@ void setzeAntworttextC(char* antwort) {
 }
 
 void zeichneAntwortenHintergrundD(int farbe) {
-	waagrechtBeides(22, 24, 14, farbe, "s");
-	waagrechtBeides(22, 23, 14, farbe, "s");
-	waagrechtBeides(22, 22, 14, farbe, "s");
-	waagrechtBeides(36, 22, 1, farbe, "s");
-	hintergrund(1136, farbe);
-	waagrechtBeides(21, 21, 1, farbe, "s");
-	hintergrund2(21, 21, farbe);
-	text(1136, "d");
-	waagrechtBeides(22, 21, 14, farbe, "s");
-	waagrechtBeides(36, 21, 1, farbe, "s");
-	hintergrund(1086, farbe);
-	waagrechtBeides(21, 22, 1, farbe, "s");
-	hintergrund2(21, 22, farbe);
-	waagrechtBeides(22, 20, 14, farbe, "s");
-	waagrechtBeides(22, 19, 14, farbe, "s");
+	zeichneRechteck(22, 19, 14, 6, farbe, "s");
+	zeichneSpitzen(1071, "s", farbe);
+	zeichneSpitzen(1121, "s", farbe);
+	zeichneSpitzen(1086, "s", farbe);
+	zeichneSpitzen(1136, "s", farbe);
+	text(1136, "D");
 }
 
 void setzeAntworttextD(char* antwort) {
