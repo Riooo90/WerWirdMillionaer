@@ -131,4 +131,6 @@ Fehlerbehebung:	fixes im Spielablauf (Mario)
 2017-01-08:
 
 hinzugefügt:	Funktion die prüft, ob ein Bild vorhanden ist (Verena)
+		Wer wird Millionaer als Text noch auch dem Spiel platziert (Verena)
+removed:	Funktion die prüft, ob ein Bild vorhanden ist wieder entfernt (Verena)
 
