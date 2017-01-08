@@ -8,7 +8,7 @@
 
 ## 2016-12-27:
 ### hinzugefügt: 
-		- Layout der Fortschrittsanzeige
+		- Layout der Fortschrittsanzeige (Mario)
 
 
 ## 2016-12-29:
@@ -47,6 +47,7 @@
 ### hinzugefügt:	
 		- Fragen und Antworten eingefügt (Verena)
 		- erste Form des Grundgerüst für den Spielablauf (Verena)
+		- Funktion die die Fragen einliest (Verena und Mario)
 		- Funktion die Antworten einliest (Verena und Mario)
 		- Lösungen der Antworten in einem Array (Verena)
 		- Funktion die die Antworten auf ihre Richtigkeit überprüft (Verena und Mario)
@@ -63,7 +64,6 @@
 ### Fehlerbehebung: 
 		- Rechtschreibfehler (Verena)
 		- Versuch der Fehlerbehebung bei den richtigen und falschen Antworten (Verena)
-		- Problem gelöst, dass die richtigen Antworten eingelesen werden (Mario)
 
 
 ## 2017-01-04:
@@ -138,7 +138,8 @@
 		- Wer wird Millionaer als Text noch auch dem Spiel platziert (Verena)
 		- Spielanleitung als ReadMe.txt (Mario)
 ### verändert:
-		- kleine Layoutanpassung am Antwort-Button (Mario)
+		- kleine Layoutanpassung am Antwort- und Neustart-Button (Mario)
+		- Readme und Changelog Rechtschreibung korrigiert
 ### entfernt:
 		- Funktion die prüft, ob ein Bild vorhanden ist wieder entfernt (Verena)
 

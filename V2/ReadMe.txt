@@ -20,7 +20,7 @@ War die Frage falsch beantwortet, färbt sich der Hintergrund rot und das Spiel s
 (3 - Joker)
 Man hat pro Spielrunde 3 Joker zur Verfügung:
 	Telefonjoker: bietet die richtige Antwort an.
-	Publikumsjoker: bitet die richtige Antwort an.
+	Publikumsjoker: bietet die richtige Antwort an.
 	50:50-Joker: löscht zwei falsche Antworten.
 Jeder Joker kann nur einmal verwendet werden.
 Um den Joker zu benutzen, muss der Kreis links neben dem Joker-Text angeklickt werden.
