@@ -217,3 +217,4 @@ void zeichneAntwortenHintergrundD(int farbe) {
 void setzeAntworttextD(char* antwort) {
 	text2(29, 21, antwort);
 }
+
