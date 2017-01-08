@@ -1,40 +1,33 @@
-========================================================================
-    CONSOLE APPLICATION : V2 Project Overview
-========================================================================
+##########################################
+# Spielanleitung zu "Wer wird Millionär" 
+##########################################
+# PG-Projekt WS2016/17
+# Version 1.0
+# 08.01.2017
+##########################################
 
-AppWizard has created this V2 application for you.
+(1 - Spielinformationen)
+Es sind insgesamt 15 Fragen zu lösen, man hat je 4 Antwortmöglichkeiten.
+Die Stufen 1 - 15 bilden die Geldbeträge von 50€ bis 1 Million € ab.
+Eine Spielrunde hat 2 „Safe-Point‘s“: 500€ und 16.000€.
+Beantwortet man eine Frage über einer dieser Spielstufen falsch, so fällt man auf diese zurück. Unter der 500€-Stufe fällt man auf 0€ zurück.
 
-This file contains a summary of what you will find in each of the files that
-make up your V2 application.
+(2 - Beantwortung von Fragen)
+Fragen beantwortet man, in dem man den jeweiligen Buchstaben links neben der Frage anklickt (A, B, C, D).
+Ist die Frage korrekt beantwortet, färbt sich der Hintergrund grün und nach kurzer Zeit wird die nächste Frage geladen.
+War die Frage falsch beantwortet, färbt sich der Hintergrund rot und das Spiel startet nach kurzer Zeit neu.
+
+(3 - Joker)
+Man hat pro Spielrunde 3 Joker zur Verfügung:
+	Telefonjoker: bietet die richtige Antwort an.
+	Publikumsjoker: bitet die richtige Antwort an.
+	50:50-Joker: löscht zwei falsche Antworten.
+Jeder Joker kann nur einmal verwendet werden.
+Um den Joker zu benutzen, muss der Kreis links neben dem Joker-Text angeklickt werden.
+
+(4 - vorzeitiger Ausstieg)
+Man kann jederzeit den Ausstieg-Button (kleiner hellblauer Kreis über dem Text "Aussteigen") anklicken und gewinnt die zuletzt erspielte Summe.
 
 
-V2.vcxproj
-    This is the main project file for VC++ projects generated using an Application Wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    Application Wizard.
 
-V2.vcxproj.filters
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
-
-V2.cpp
-    This is the main application source file.
-
-/////////////////////////////////////////////////////////////////////////////
-Other standard files:
-
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named V2.pch and a precompiled types file named StdAfx.obj.
-
-/////////////////////////////////////////////////////////////////////////////
-Other notes:
-
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
-
-/////////////////////////////////////////////////////////////////////////////
+Viel Spaß mit "Wer wird Millionär" wünschen Verena und Mario.
