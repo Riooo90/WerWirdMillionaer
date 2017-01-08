@@ -4,15 +4,6 @@
 
 static int feld, ix, iy; //Positionen der Klicks
 
-void pruefeBild() {
-	if (sendMessage("image 45 46 wwm.png \n")) {
-		//gute Frage was dann :D
-	}
-	else {
-		text2(45, 46, "WWM");
-	}
-}
-
 void bereiteSpielfeldVor(int aktiveStufe) {
 	// jetzt Schriftgroesse veraendern, gilt dann fuer alle neue Texte:
 	char befehl[100];
@@ -23,12 +14,14 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 	flaeche(SILVER);
 	formen("none");
 	sprintf_s(befehl, 100, "clearAllText \n");
-	sendMessage(befehl);	
+	sendMessage(befehl);
+
+	text2(45, 46, "Wer wird Millionaer");
 
 	// Test mit Bild (Bild-Datei wird relativ zum jserver-Verzeichnis gesucht)
-	form2(45, 46, "none");
-	symbolGroesse2(45, 46, 3.0);
-	sendMessage("image 45 46 wwm.png \n");
+	// form2(45, 46, "none");
+	// symbolGroesse2(45, 46, 3.0);
+	// sendMessage("image 45 46 wwm.png \n");
 
 	groesse(50, 50);
 	frageHintergrund();
