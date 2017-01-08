@@ -16,9 +16,9 @@ void bereiteSpielfeldVor(int aktiveStufe) {
 	sprintf_s(befehl, 100, "clearAllText \n");
 	sendMessage(befehl);
 
-	text2(45, 46, "Wer wird Millionaer");
-
 	// Test mit Bild (Bild-Datei wird relativ zum jserver-Verzeichnis gesucht)
+	// Anmerkung: Bilddatei wird in der Live-Demo gezeigt, um Probleme zu verhindern wird es hier nur als Text eingeblendet.
+	text2(45, 46, "Wer wird Millionaer");
 	// form2(45, 46, "none");
 	// symbolGroesse2(45, 46, 3.0);
 	// sendMessage("image 45 46 wwm.png \n");
