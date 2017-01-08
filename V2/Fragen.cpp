@@ -21,8 +21,8 @@ char *fragen[] = { "Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, d
 "Welcher Buchstabe kam in unserem Aplhabet erst im Mittelalter hinzu?",
 "Welche Pflanzen zaehlen zur selben Familie und sehen sich zum Verwechseln aehnlich?",
 "Womit machte sich der 2012 verstorbene Inder Ravi Shankar zur Legende?",
-"Bei welchen beiden Staaten findet man im Laendernamen wie auch im Namen der Hauptstadt keinen anderen Vokal als das A?",
-"Wer muss beim Urlaub im Schwarzwald grundsaetzlich die sogenannte Zwei-Meter-Regel beachten?",
+"Welches dieser Teile gehoert nicht zu einer mechanischen Uhr?",
+"Welche Pflanze gibt es nicht?",
 "Welchen Eintrag findet man im Urduden von 1880 nicht?" };
 
 //60 Antowerten für jede Stufe vier: Schrittweite 4
@@ -38,8 +38,8 @@ char *antworten[] = { "...einen draufmachen", "...die Nacht durchzechen", "...di
 "C", "W", "V", "D",
 "Lavendel und Rosmarin","Hibiskus und Krokus", "Eibe und Ulme", "Hortensie und Azalee",
 "Sitar", "Yogakurse", "Currygerichte", "Kricketschlaeger",
-"Katar und Tschad", "Japan und Madagaskar", "Kanada und Bahamas", "Ghana und Kasachstan",
-"Nichtschwimmer", "Hundebesitzer", "Mountainbiker", "Wohnmobilfahrer",
+"Anker", "Unruh", "Feder", "Loeffel",
+"Leberwurstbaum", "Metzgerpalme", "Schnitzelkaktus", "Schinkenbirne",
 "Dynamit", "Gluehlampe", "Batterie", "Mikrophon" };
 
 /* liest die Frage fuer die aktuelle Stufe aus dem Frage-Array ein und schreibt sie in den Frage-Button */

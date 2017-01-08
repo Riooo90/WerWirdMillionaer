@@ -135,11 +135,12 @@
 ## 2017-01-08:
 ### hinzugefügt:	
 		- Funktion die prüft, ob ein Bild vorhanden ist (Verena)
-		- Wer wird Millionaer als Text noch auch dem Spiel platziert (Verena)
+		- Wer wird Millionaer als Text noch auf dem Spiel platziert (Verena und Mario)
 		- Spielanleitung als ReadMe.txt (Mario)
 ### verändert:
 		- kleine Layoutanpassung am Antwort- und Neustart-Button (Mario)
 		- Readme und Changelog Rechtschreibung korrigiert (Verena)
+		- zu lange Fragen angepasst (Verena und Mario)
 ### entfernt:
 		- Funktion die prüft, ob ein Bild vorhanden ist wieder entfernt (Verena)
 
