@@ -128,3 +128,7 @@ Fehlerbehebung:	fixes im Spielablauf (Mario)
 		Grammatikalische Fehler behoben (Verena)
 		Richtiger Geldbetrag wird nun bei Abbruch des Spiels angezeigt (Mario)
 
+2017-01-08:
+
+hinzugefügt:	Funktion die prüft, ob ein Bild vorhanden ist (Verena)
+
